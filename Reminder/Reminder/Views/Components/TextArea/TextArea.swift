@@ -13,7 +13,7 @@ struct TextArea: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text("Nova lista")
+            Text("new_list")
                 .foregroundStyle(ColorManager.setColor(.cinzaLabels))
                 .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 0))
             VStack {

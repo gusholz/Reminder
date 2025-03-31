@@ -55,8 +55,22 @@
         }
       }
     },
-    "Nova lista" : {
-
+    "new_list" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "New List"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nova Lista"
+          }
+        }
+      }
     },
     "reminders" : {
       "extractionState" : "manual",
