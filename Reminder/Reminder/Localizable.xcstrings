@@ -18,6 +18,26 @@
         }
       }
     },
+    "description" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Description"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Descrição"
+          }
+        }
+      }
+    },
+    "Hello, world!" : {
+
+    },
     "lists" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -35,6 +55,9 @@
         }
       }
     },
+    "Nova lista" : {
+
+    },
     "reminders" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -48,6 +71,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lembretes"
+          }
+        }
+      }
+    },
+    "title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Title"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Título"
           }
         }
       }
