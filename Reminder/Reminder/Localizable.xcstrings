@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "" : {
+
+    },
     "data" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -85,6 +88,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lembretes"
+          }
+        }
+      }
+    },
+    "theme" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "THEME"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "TEMA"
           }
         }
       }
