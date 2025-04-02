@@ -14,11 +14,13 @@ struct TextArea: View {
     var body: some View {
         VStack(alignment: .leading) {
             Text("new_list")
+                .setSfProDisplayFont(variation: .regular, size: 12)
                 .foregroundStyle(ColorManager.setColor(.cinzaLabels))
                 .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 0))
             VStack {
                 TextField(text: $title) {
                     Text("title")
+                        .setSfProDisplayFont(variation: .regular, size: 17)
                         .foregroundStyle(ColorManager.setColor(.branco))
                 }
                 
@@ -27,6 +29,7 @@ struct TextArea: View {
                 
                 TextField(text: $description, axis: .vertical) {
                     Text("description")
+                        .setSfProDisplayFont(variation: .regular, size: 17)
                         .foregroundStyle(ColorManager.setColor(.branco))
                 }
                 .lineLimit(5, reservesSpace: true)
