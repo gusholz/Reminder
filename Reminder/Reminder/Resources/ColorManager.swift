@@ -15,6 +15,7 @@ enum ProjectColors: String {
     case verde
     case branco
     case preto
+    case backgroundCard
 }
 
 struct ColorManager {
