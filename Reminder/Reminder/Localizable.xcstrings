@@ -41,6 +41,23 @@
     "Hello, world!" : {
 
     },
+    "icon" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ICON"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ÍCONE"
+          }
+        }
+      }
+    },
     "lists" : {
       "extractionState" : "manual",
       "localizations" : {
