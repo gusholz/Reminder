@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ReminderTouggle: View {
+struct ReminderToggle: View {
     var selectionColor: Color = .green
     @Binding var isChecked: Bool
     var body: some View {
@@ -28,5 +28,5 @@ struct ReminderTouggle: View {
 }
 
 #Preview {
-    ReminderTouggle(isChecked: .constant(false))
+    ReminderToggle(isChecked: .constant(false))
 }

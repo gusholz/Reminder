@@ -16,7 +16,7 @@ struct ReminderCard: View {
     var checkColor: Color = .verde
     var body: some View {
         GenericReminderCard {
-            ReminderTouggle(selectionColor: checkColor, isChecked: $isChecked)
+            ReminderToggle(selectionColor: checkColor, isChecked: $isChecked)
         } rightContent: {
             EmptyView()
         } contentText: {
