@@ -16,6 +16,9 @@ enum ProjectColors: String {
     case branco
     case preto
     case backgroundCard
+    case cinzaBackground
+    case cinzaLabels
+    case transparente = "Clear"
 }
 
 struct ColorManager {
