@@ -9,9 +9,7 @@ import SwiftUI
 
 enum Page: String, Identifiable {
     case main
-    case teste
-    
-    var id: String {
+        var id: String {
         self.rawValue
     }
     
@@ -19,9 +17,7 @@ enum Page: String, Identifiable {
     var view: some View {
         switch self {
         case .main:
-            ReminderCard(isChecked: .constant(false), title: "Teste", time: "Teste", textTag: "Teste", colorTag: .black, checkColor: .accentColor)
-        case .teste:
-            ReminderCard(isChecked: .constant(false), title: "Teste", time: "Teste", textTag: "Teste", colorTag: .black, checkColor: .accentColor)
+            ContentView()
         }
     }
 }
@@ -58,11 +54,16 @@ enum FullScreenCover: String, Identifiable {
     }
 }
 
+protocol CoordinatorProtocol {
+    var path: NavigationPath { get set }
+}
+
 @Observable
 class GeneralCoordinator {
     var path = NavigationPath()
     var sheet: Sheets?
     var fullScreenCover: FullScreenCover?
+
     func build(page: Page) -> some View {
         return page.view
     }
@@ -91,6 +92,12 @@ class GeneralCoordinator {
     
     func navigate(to route: Page) {
         path.append(route)
+    }
+    
+    func navigate(to flow: [Page]) {
+        flow.forEach { page in
+            path.append(page)
+        }
     }
     
     func pop() {
