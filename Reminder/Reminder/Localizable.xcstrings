@@ -21,6 +21,22 @@
         }
       }
     },
+    "date" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Date"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Data"
+          }
+        }
+      }
+    },
     "description" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -38,20 +54,37 @@
         }
       }
     },
-    "Hello, world!" : {
-
+    "details" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Details"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Detalhes"
+          }
+        }
+      }
     },
-    "Hello, World!" : {
-
-    },
-    "Hello, World! 2" : {
-
-    },
-    "Hello, World! 3" : {
-
-    },
-    "Hello, World! 4" : {
-
+    "hour" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hour"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Hora"
+          }
+        }
+      }
     },
     "icon" : {
       "extractionState" : "manual",
@@ -104,6 +137,25 @@
         }
       }
     },
+    "Nunca" : {
+
+    },
+    "reminder_date" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reminder Date"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Prazo do Lembrete"
+          }
+        }
+      }
+    },
     "reminders" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -117,6 +169,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lembretes"
+          }
+        }
+      }
+    },
+    "repetition" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Repetition"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Repetição"
           }
         }
       }

@@ -20,7 +20,7 @@ enum DaysOfTheWeek: String, CaseIterable, Identifiable {
 }
 
 struct DaySelection: View {
-    @Binding var selectedDays: [Bool]
+    @State var selectedDays: [Bool] = [false, false, false, false, false, false, false]
     
     var body: some View {
         VStack {
@@ -32,6 +32,7 @@ struct DaySelection: View {
                     Spacer()
                     Checkbox(isChecked: $selectedDays[index])
                 }
+                
                 Divider()
 
             }
@@ -43,6 +44,5 @@ struct DaySelection: View {
 }
 
 #Preview {
-    @Previewable @State var selectedDaysArray = [false, false, false, false, false]
-    DaySelection(selectedDays: $selectedDaysArray)
+    DaySelection()
 }

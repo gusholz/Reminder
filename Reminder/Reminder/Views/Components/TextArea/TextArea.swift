@@ -38,7 +38,6 @@ struct TextArea: View {
             .background(ColorManager.setColor(.cinzaBackground))
             .cornerRadius(10)
         }
-        .padding()
 
     }
 }
