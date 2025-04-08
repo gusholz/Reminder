@@ -23,5 +23,6 @@ struct GeneralCoordinatorView: View {
 }
 
 #Preview {
-    GeneralCoordinatorView()
+    @Previewable var coordinator = GeneralCoordinator()
+    GeneralCoordinatorView().environment(coordinator)
 }
