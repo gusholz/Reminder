@@ -96,7 +96,7 @@ struct DetailsSection: View {
             }
         }
         .padding(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
-        .background(ColorManager.setColor(.cinzaBackground))
+        .background(.cinzaBackground)
         .cornerRadius(10)
     }
 }

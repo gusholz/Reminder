@@ -23,7 +23,7 @@ struct IconCarousel: View {
         VStack(alignment: .leading) {
             Text("icon")
                 .setBdoGroteskFont(weight: .demibold, size: 18)
-                .foregroundStyle(ColorManager.setColor(.branco))
+                .foregroundStyle(.branco)
             HStack {
                 ForEach(defaultIcons, id: \.rawValue) { icon in
                     Button {
@@ -31,7 +31,7 @@ struct IconCarousel: View {
                     } label: {
                         ZStack {
                             Circle()
-                                .foregroundStyle(ColorManager.setColor(.cinzaBackground))
+                                .foregroundStyle(.cinzaBackground)
                                 .scaleEffect(0.9)
                             IconsManager.setIcon(icon: icon)
                                 .scaleEffect(1.4)
@@ -50,7 +50,7 @@ struct IconCarousel: View {
                 } label: {
                     ZStack {
                         Circle()
-                            .foregroundStyle(ColorManager.setColor(.branco))
+                            .foregroundStyle(.branco)
                             .scaleEffect(0.9)
                         IconsManager.setIcon(icon: .plusCircle)
                             .scaleEffect(1.4)
@@ -68,5 +68,4 @@ struct IconCarousel: View {
 
 #Preview {
     IconCarousel()
-        .background(ColorManager.setColor(.preto))
 }

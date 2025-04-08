@@ -17,7 +17,7 @@ struct ReminderForm: View {
             Text("details")
                 .setSfProDisplayFont(variation: .regular, size: 12)
                 .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 0))
-                .foregroundStyle(ColorManager.setColor(.cinzaLabels))
+                .foregroundStyle(.cinzaLabels)
             
             DetailsSection(selectedDate: $viewModel.selectedDate, selectedTime: $viewModel.selectedTime)
         }

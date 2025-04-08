@@ -24,7 +24,7 @@ struct GenericReminderCard<Content: View, ContentRight: View, ContentText: View>
         }
         .padding(.vertical, 20)
         .padding(.leading, 16)
-        .background(ColorManager.setColor(.backgroundCard))
+        .background(.backgroundCard)
         .cornerRadius(10)
         .foregroundColor(.white)
         .frame(height: 70)
