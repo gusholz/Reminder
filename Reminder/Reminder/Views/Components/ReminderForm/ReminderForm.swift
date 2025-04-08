@@ -26,5 +26,6 @@ struct ReminderForm: View {
 }
 
 #Preview {
-    ReminderForm()
+    @Previewable var coordinator = GeneralCoordinator()
+    ReminderForm().environment(coordinator)
 }

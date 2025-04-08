@@ -28,5 +28,6 @@ struct ReminderToggle: View {
 }
 
 #Preview {
-    ReminderToggle(isChecked: .constant(false))
+    @Previewable @State var boolean: Bool = false
+    ReminderToggle(isChecked: $boolean)
 }
