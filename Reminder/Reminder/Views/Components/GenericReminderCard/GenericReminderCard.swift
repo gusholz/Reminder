@@ -12,6 +12,7 @@ struct GenericReminderCard<Content: View, ContentRight: View, ContentText: View>
     var rightContent: () -> ContentRight
     var contentText: () -> ContentText
     var hasIconDivider = false
+    
     var body: some View {
         HStack{
             leftContent()

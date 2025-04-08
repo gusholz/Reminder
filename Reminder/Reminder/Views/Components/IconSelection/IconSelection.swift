@@ -60,7 +60,6 @@ struct IconSelection: View {
         .dollarsignSquare
     ]
     
-    
     var body: some View {
         VStack(alignment: .leading) {
             Text("icon")
