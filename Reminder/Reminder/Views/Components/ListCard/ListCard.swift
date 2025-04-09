@@ -11,6 +11,7 @@ struct ListCard: View {
     var color: Color
     var icon: Image
     var title: String
+    
     var body: some View {
         GenericReminderCard(leftContent: {
             icon
@@ -26,9 +27,7 @@ struct ListCard: View {
                     bottomTrailingRadius:8, topTrailingRadius: 8
                 ).frame(width: 14).foregroundColor(color)
             }
-            
         }
-
     }
 }
 

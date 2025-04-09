@@ -17,5 +17,6 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    @Previewable var coordinator = GeneralCoordinator()
+    ContentView().environment(coordinator)
 }

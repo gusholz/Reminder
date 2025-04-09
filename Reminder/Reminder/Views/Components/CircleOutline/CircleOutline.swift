@@ -11,7 +11,7 @@ struct CircleOutline: View {
     var body: some View {
         ZStack {
             Circle()
-                .stroke(ColorManager.setColor(.branco), lineWidth: 2)
+                .stroke(.branco, lineWidth: 2)
                 .fill(.clear)
                 .frame(width: 65, height: 65)
         }

@@ -90,13 +90,14 @@ struct DetailsSection: View {
                 Button {
                     coordinator.present(sheet: .selectedDaysSheet)
                 } label: {
+                    // TODO: Adicionar lógica na view model que modifica essa label com base no state da viewModel.selectedDays
                     Text("Nunca")
                         .foregroundStyle(.cinzaLabels)
                 }
             }
         }
         .padding(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
-        .background(ColorManager.setColor(.cinzaBackground))
+        .background(.cinzaBackground)
         .cornerRadius(10)
     }
 }
@@ -104,6 +105,6 @@ struct DetailsSection: View {
 #Preview {
     @Previewable @State var selectedDate = Date.now
     @Previewable @State var selectedTime = Date.now
-    
-    DetailsSection(selectedDate: $selectedDate, selectedTime: $selectedTime)
+    @Previewable var coordinator = GeneralCoordinator()
+    DetailsSection(selectedDate: $selectedDate, selectedTime: $selectedTime).environment(coordinator)
 }

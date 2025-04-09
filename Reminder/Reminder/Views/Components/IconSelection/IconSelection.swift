@@ -60,7 +60,6 @@ struct IconSelection: View {
         .dollarsignSquare
     ]
     
-    
     var body: some View {
         VStack(alignment: .leading) {
             Text("icon")
@@ -73,7 +72,7 @@ struct IconSelection: View {
                     } label: {
                         ZStack {
                             Circle()
-                                .foregroundStyle(ColorManager.setColor(.cinzaBackground))
+                                .foregroundStyle(.cinzaBackground)
                                 .scaleEffect(0.9)
                             IconsManager.setIcon(icon: icon)
                                 .scaleEffect(1.4)

@@ -14,29 +14,25 @@ struct Checkbox: View {
         Button {
             isChecked.toggle()
         } label: {
-            if isChecked {
-                Circle()
-                    .foregroundStyle(.branco)
-                    .frame(width: 26, height: 26)
-            } else {
-                ZStack {
-                    Circle()
-                        .foregroundStyle(.branco)
-                        .frame(width: 26, height: 26)
-                    Circle()
-                        .foregroundStyle(.cinzaBackground)
-                        .frame(width: 22, height: 22)
-                    
+            Circle()
+                .foregroundStyle(isChecked ? .cinzaBackground : .branco)
+                .frame(width: 26, height: 26)
+                .overlay {
+                    if isChecked {
+                        IconsManager.setIcon(icon: .checkmark)
+                            .font(.system(size: 26))
+                            .tint(.verde)
+                    } else {
+                        Circle()
+                            .foregroundStyle(.cinzaBackground)
+                            .frame(width: 22, height: 22)
+                    }
                 }
-            }
         }
-
     }
 }
 
 #Preview {
     @Previewable @State var boolean: Bool = false
     Checkbox(isChecked: $boolean)
-        .padding()
-        .background(.verde)
 }

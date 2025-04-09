@@ -20,6 +20,7 @@ enum DaysOfTheWeek: String, CaseIterable, Identifiable {
 }
 
 struct DaySelection: View {
+    // TODO: Move this State to the ReminderFormViewModel
     @State var selectedDays: [Bool] = [false, false, false, false, false, false, false]
     
     var body: some View {
