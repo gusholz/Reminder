@@ -70,6 +70,23 @@
         }
       }
     },
+    "for_today" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "For Today"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Para Hoje"
+          }
+        }
+      }
+    },
     "hour" : {
       "localizations" : {
         "en" : {
@@ -120,6 +137,23 @@
         }
       }
     },
+    "my_lists" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "My Lists"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Minhas Listas"
+          }
+        }
+      }
+    },
     "new_list" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -139,6 +173,23 @@
     },
     "Nunca" : {
 
+    },
+    "recents" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recents"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recentes"
+          }
+        }
+      }
     },
     "reminder_date" : {
       "localizations" : {
