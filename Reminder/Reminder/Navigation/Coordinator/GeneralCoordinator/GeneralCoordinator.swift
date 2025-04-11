@@ -25,6 +25,7 @@ enum Page: String, Identifiable {
 enum Sheets: String, Identifiable {
     case main
     case selectedDaysSheet
+    case selectListSheet
     
     var id: String {
         self.rawValue
@@ -37,6 +38,8 @@ enum Sheets: String, Identifiable {
             ReminderCard(isChecked: .constant(false), title: "Teste", time: "Teste", textTag: "Teste", colorTag: .black, checkColor: .accentColor)
         case .selectedDaysSheet:
             DaySelection()
+        case .selectListSheet:
+            ListsScreen()
         }
     }
 }

@@ -92,6 +92,7 @@ struct DetailsSection: View {
                 } label: {
                     // TODO: Adicionar lógica na view model que modifica essa label com base no state da viewModel.selectedDays
                     Text("Nunca")
+                        .setBdoGroteskFont(weight: .regular, size: 14)
                         .foregroundStyle(.cinzaLabels)
                 }
             }

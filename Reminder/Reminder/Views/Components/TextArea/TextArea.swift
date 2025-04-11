@@ -13,10 +13,7 @@ struct TextArea: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text("new_list")
-                .setSfProDisplayFont(variation: .regular, size: 12)
-                .foregroundStyle(.cinzaLabels)
-                .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 0))
+            
             VStack {
                 TextField(text: $title) {
                     Text("title")
