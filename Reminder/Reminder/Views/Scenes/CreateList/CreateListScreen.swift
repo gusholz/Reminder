@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CreateListView: View {
+struct CreateListScreen: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
             Text("new_list")
@@ -31,5 +31,5 @@ struct CreateListView: View {
 }
 
 #Preview {
-    CreateListView()
+    CreateListScreen()
 }
