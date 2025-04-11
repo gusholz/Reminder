@@ -137,9 +137,6 @@
         }
       }
     },
-    "Lista" : {
-
-    },
     "lists" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -259,9 +256,6 @@
           }
         }
       }
-    },
-    "Selecionar" : {
-
     },
     "select" : {
       "extractionState" : "manual",
