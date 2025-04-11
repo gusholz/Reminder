@@ -9,12 +9,16 @@ import SwiftUI
 
 struct CreateListView: View {
     var body: some View {
-        VStack {
+        VStack(spacing: 16) {
             TextArea()
             
             Divider()
+                .overlay(.cinzaLabels)
             
             ColorCarousel()
+            
+            Divider()
+                .overlay(.cinzaLabels)
             
             IconCarousel()
         }
