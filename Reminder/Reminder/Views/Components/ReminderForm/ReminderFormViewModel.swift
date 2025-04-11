@@ -12,5 +12,6 @@ class ReminderFormViewModel {
     var selectedDate: Date = Date.now
     var selectedTime: Date = Date.now
     var selectedDays = [false, false, false, false, false, false, false]
+    var selectedList: ReminderList?
     
 }

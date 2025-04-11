@@ -120,6 +120,26 @@
         }
       }
     },
+    "list" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "List"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lista"
+          }
+        }
+      }
+    },
+    "Lista" : {
+
+    },
     "lists" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -236,6 +256,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Repetição"
+          }
+        }
+      }
+    },
+    "Selecionar" : {
+
+    },
+    "select" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Selecionar"
           }
         }
       }
