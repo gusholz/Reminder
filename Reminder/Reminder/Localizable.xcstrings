@@ -4,6 +4,9 @@
     "" : {
 
     },
+    "Config" : {
+
+    },
     "data" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -41,6 +44,12 @@
     "Hello, world!" : {
 
     },
+    "Hello, World!" : {
+
+    },
+    "Home View" : {
+
+    },
     "icon" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -57,6 +66,18 @@
           }
         }
       }
+    },
+    "Icone 1" : {
+
+    },
+    "Icone 2" : {
+
+    },
+    "Icone 3" : {
+
+    },
+    "Início" : {
+
     },
     "lists" : {
       "extractionState" : "manual",
@@ -93,6 +114,57 @@
       }
     },
     "reminders" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reminders"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lembretes"
+          }
+        }
+      }
+    },
+    "tab-data" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "data"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dados"
+          }
+        }
+      }
+    },
+    "tab-list" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lists"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Listas"
+          }
+        }
+      }
+    },
+    "tab-reminder" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
