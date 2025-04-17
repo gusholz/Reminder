@@ -4,6 +4,9 @@
     "" : {
 
     },
+    "Config" : {
+
+    },
     "data" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -102,6 +105,12 @@
           }
         }
       }
+    },
+    "Hello, World!" : {
+
+    },
+    "Home View" : {
+
     },
     "icon" : {
       "extractionState" : "manual",
@@ -241,17 +250,42 @@
         }
       }
     },
-    "repetition" : {
+    "tab-data" : {
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Repetition"
+            "value" : "data"
           }
         },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "Dados"
+          }
+        }
+      }
+    },
+    "tab-list" : {
+      "extractionState" : "manual",
+    "repetition" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lists"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Listas"
+          }
+        }
+      }
+    },
+    "tab-reminder" : {
             "value" : "Repetição"
           }
         }
@@ -263,13 +297,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Select"
+            "value" : "Reminders"
           }
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Selecionar"
+            "state" : "translated",
+            "value" : "Lembretes"
           }
         }
       }
