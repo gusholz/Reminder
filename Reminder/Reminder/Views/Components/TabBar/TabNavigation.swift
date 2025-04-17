@@ -66,8 +66,8 @@ struct TabNavigation: View {
     
     var pages: [PageTab : AnyView] = [:]
     init() {
-        self.pages[PageTab.reminders] = AnyView(Text("Inserir Tela aqui"))
-        self.pages[PageTab.lists] = AnyView(Text("Inserir Tela aqui"))
+        self.pages[PageTab.reminders] = AnyView(ReminderListScreen())
+        self.pages[PageTab.lists] = AnyView(ListsScreen())
         self.pages[PageTab.data] = AnyView(Text("Inserir Tela aqui"))
     }
     

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ListsScreen: View {
+    @Environment(GeneralCoordinator.self) var coordinator
     @State private var outerList: [ReminderList] = mockListFactory()
     var isSheet: Bool = false
     
@@ -30,10 +31,29 @@ struct ListsScreen: View {
                 }
             }
         }
+        .toolbar {
+            ToolbarItem(placement: .topBarLeading) {
+                Text("my_lists")
+                    .setBdoGroteskFont(weight: .medium, size: 20)
+            }
+            
+            ToolbarItem {
+                IconsManager.setIcon(icon: .plusCircleFilled)
+                    .font(.system(size: 26))
+                    .foregroundStyle(.verde)
+                    .onTapGesture {
+                        coordinator.present(sheet: .createListSheet)
+                    }
+            }
+        }
         .padding()
     }
 }
 
 #Preview {
-    ListsScreen()
+    @Previewable var coordinator = GeneralCoordinator()
+    NavigationStack {
+        ListsScreen().environment(coordinator)
+    }
+    
 }

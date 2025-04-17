@@ -12,11 +12,11 @@ struct ContentView: View {
         VStack {
             TabNavigation()
         }
-        .padding()
     }
 }
 
 #Preview {
     @Previewable var coordinator = GeneralCoordinator()
-    ContentView().environment(coordinator)
+    ContentView()
+        .environment(coordinator)
 }

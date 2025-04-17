@@ -12,6 +12,7 @@ struct ReminderApp: App {
     var body: some Scene {
         WindowGroup {
             GeneralCoordinatorView()
+                .preferredColorScheme(.dark)
         }
     }
 }

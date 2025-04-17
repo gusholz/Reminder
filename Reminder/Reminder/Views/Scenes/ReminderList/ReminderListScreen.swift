@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ReminderListScreen: View {
+    @Environment(GeneralCoordinator.self) var coordinator
     
     let rows = [
         GridItem(.flexible(minimum: 80)),
@@ -75,10 +76,43 @@ struct ReminderListScreen: View {
             }
             
         }
+        .toolbar {
+            ToolbarItem(placement: .topBarLeading) {
+                Image("logo")
+            }
+                        
+            ToolbarItemGroup {
+                HStack {
+                    Button {
+                        
+                    } label: {
+                        IconsManager.setIcon(icon: .gear)
+                    }
+                    
+                    Spacer()
+                    
+                    Button {
+                        coordinator.present(sheet: .createReminderSheet)
+                    } label: {
+                        IconsManager.setIcon(icon: .plusCircle)
+                    }
+                    
+                    
+                }
+            }
+        }
         .padding()
     }
 }
 
 #Preview {
-    ReminderListScreen()
+    @Previewable var coordinator = GeneralCoordinator()
+    ReminderListScreen().environment(coordinator)
+}
+
+#Preview {
+    @Previewable var coordinator = GeneralCoordinator()
+    NavigationStack {
+        ReminderListScreen().environment(coordinator)
+    }
 }

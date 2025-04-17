@@ -26,6 +26,8 @@ enum Sheets: String, Identifiable {
     case main
     case selectedDaysSheet
     case selectListSheet
+    case createReminderSheet
+    case createListSheet
     
     var id: String {
         self.rawValue
@@ -40,6 +42,10 @@ enum Sheets: String, Identifiable {
             DaySelection()
         case .selectListSheet:
             ListsScreen()
+        case .createReminderSheet:
+            CreateReminderScreen()
+        case .createListSheet:
+            CreateListScreen()
         }
     }
 }
