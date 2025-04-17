@@ -67,6 +67,8 @@ enum ProjectIcons: String {
     case cube = "cube"
     case gameController = "gamecontroller"
     case dollarsignSquare = "dollarsign.square"
+    case checkmark = "checkmark.circle.fill"
+    case arrowRight = "chevron.right"
 }
 
 let iconsMapper: [(ProjectIcons, Image)] = [
@@ -127,7 +129,9 @@ let iconsMapper: [(ProjectIcons, Image)] = [
     (.photo, Image(systemName: "photo")),
     (.cube, Image(systemName: "cube")),
     (.gameController, Image(systemName: "gamecontroller")),
-    (.dollarsignSquare, Image(systemName: "dollarsign.square"))
+    (.dollarsignSquare, Image(systemName: "dollarsign.square")),
+    (.checkmark, Image(systemName: "checkmark.circle.fill")),
+    (.arrowRight, Image(systemName: "chevron.right"))
 ]
 
 struct IconsManager {

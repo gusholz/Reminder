@@ -9,30 +9,30 @@ import SwiftUI
 
 struct ColorCarousel: View {
     @State private var isColorPickerOpen = false;
-    @State private var selectedColor: Color = ColorManager.setColor(.transparente);
+    @State private var selectedColor: Color = .clear;
     
-    let defaultColors: [ProjectColors] = [
-        ProjectColors.laranja,
-        ProjectColors.magenta,
-        ProjectColors.verde,
-        ProjectColors.amarelo,
-        ProjectColors.lilas
+    let defaultColors: [Color] = [
+        .laranja,
+        .magenta,
+        .verde,
+        .amarelo,
+        .lilas
     ]
     
     var body: some View {
         VStack(alignment: .leading) {
             Text("theme")
                 .setBdoGroteskFont(weight: .demibold, size: 18)
-                .foregroundStyle(ColorManager.setColor(.branco))
+                .foregroundStyle(.branco)
             HStack(spacing: 14) {
-                ForEach(defaultColors, id: \.rawValue) { color in
+                ForEach(defaultColors, id: \.self) { color in
                     Button {
-                        selectedColor = ColorManager.setColor(color)
+                        selectedColor = color
                     } label: {
                         Circle() 
-                            .foregroundStyle(ColorManager.setColor(color))
+                            .foregroundStyle(color)
                             .overlay {
-                                if ColorManager.setColor(color) == selectedColor {
+                                if color == selectedColor {
                                     CircleOutline()
                                 }
                             }
@@ -51,5 +51,4 @@ struct ColorCarousel: View {
 
 #Preview {
     ColorCarousel()
-        .background(ColorManager.setColor(.preto))
 }

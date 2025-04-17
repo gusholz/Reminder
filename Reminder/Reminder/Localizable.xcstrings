@@ -24,6 +24,22 @@
         }
       }
     },
+    "date" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Date"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Data"
+          }
+        }
+      }
+    },
     "description" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -41,8 +57,54 @@
         }
       }
     },
-    "Hello, world!" : {
-
+    "details" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Details"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Detalhes"
+          }
+        }
+      }
+    },
+    "for_today" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "For Today"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Para Hoje"
+          }
+        }
+      }
+    },
+    "hour" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hour"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Hora"
+          }
+        }
+      }
     },
     "Hello, World!" : {
 
@@ -67,17 +129,22 @@
         }
       }
     },
-    "Icone 1" : {
-
-    },
-    "Icone 2" : {
-
-    },
-    "Icone 3" : {
-
-    },
-    "Início" : {
-
+    "list" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "List"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lista"
+          }
+        }
+      }
     },
     "lists" : {
       "extractionState" : "manual",
@@ -96,6 +163,23 @@
         }
       }
     },
+    "my_lists" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "My Lists"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Minhas Listas"
+          }
+        }
+      }
+    },
     "new_list" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -109,6 +193,42 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nova Lista"
+          }
+        }
+      }
+    },
+    "Nunca" : {
+
+    },
+    "recents" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recents"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recentes"
+          }
+        }
+      }
+    },
+    "reminder_date" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reminder Date"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Prazo do Lembrete"
           }
         }
       }
@@ -149,6 +269,7 @@
     },
     "tab-list" : {
       "extractionState" : "manual",
+    "repetition" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -165,6 +286,12 @@
       }
     },
     "tab-reminder" : {
+            "value" : "Repetição"
+          }
+        }
+      }
+    },
+    "select" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {

@@ -7,10 +7,11 @@
 
 import Foundation
 
-struct ReminderList: Codable, Identifiable {
+struct ReminderList: Codable, Identifiable, Hashable {
     var id: UUID
     var title: String
     var description: String
     var remindersId: [UUID]
-    var theme: String
+    var color: String
+    var icon: String
 }

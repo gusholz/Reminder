@@ -12,6 +12,7 @@ struct GenericReminderCard<Content: View, ContentRight: View, ContentText: View>
     var rightContent: () -> ContentRight
     var contentText: () -> ContentText
     var hasIconDivider = false
+    
     var body: some View {
         HStack{
             leftContent()
@@ -24,7 +25,7 @@ struct GenericReminderCard<Content: View, ContentRight: View, ContentText: View>
         }
         .padding(.vertical, 20)
         .padding(.leading, 16)
-        .background(ColorManager.setColor(.backgroundCard))
+        .background(.backgroundCard)
         .cornerRadius(10)
         .foregroundColor(.white)
         .frame(height: 70)

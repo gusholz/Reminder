@@ -14,6 +14,7 @@ struct ReminderCard: View {
     var textTag: String
     var colorTag: Color = .verde
     var checkColor: Color = .verde
+    
     var body: some View {
         GenericReminderCard {
             ReminderToggle(selectionColor: checkColor, isChecked: $isChecked)
@@ -23,18 +24,18 @@ struct ReminderCard: View {
             VStack(alignment: .leading) {
                 Text(title).setBdoGroteskFont(weight: .demibold, size: 14)
                     .padding(.bottom, 4)
-                HStack{
+                
+                HStack {
                     Text(time).setBdoGroteskFont(weight: .light, size: 14)
-                    Spacer().frame(width: 24)
                     Text(textTag).foregroundStyle(colorTag).setBdoGroteskFont(weight: .regular, size: 14)
-                        
-                }.padding(0)
+                }
+                
             }.padding(.leading, 12)
         }
-
     }
 }
 
 #Preview {
-    ReminderCard(isChecked: .constant(false), title: "Titulo", time: "14:00", textTag: "Tag")
+    @Previewable @State var isChecked: Bool = false
+    ReminderCard(isChecked: $isChecked, title: "Titulo", time: "14:00", textTag: "Tag")
 }
