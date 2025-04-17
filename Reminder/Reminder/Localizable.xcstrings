@@ -4,26 +4,6 @@
     "" : {
 
     },
-    "Config" : {
-
-    },
-    "data" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Data"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Dados"
-          }
-        }
-      }
-    },
     "date" : {
       "localizations" : {
         "en" : {
@@ -31,28 +11,15 @@
             "state" : "translated",
             "value" : "Date"
           }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Data"
-          }
         }
       }
     },
     "description" : {
-      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Description"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Descrição"
           }
         }
       }
@@ -64,28 +31,15 @@
             "state" : "translated",
             "value" : "Details"
           }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Detalhes"
-          }
         }
       }
     },
     "for_today" : {
-      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "For Today"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Para Hoje"
           }
         }
       }
@@ -95,104 +49,50 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hour"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Hora"
+            "value" : "Hour "
           }
         }
       }
     },
-    "Hello, World!" : {
-
-    },
-    "Home View" : {
-
-    },
     "icon" : {
-      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ICON"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ÍCONE"
+            "value" : "Icon"
           }
         }
       }
     },
+    "Inserir Tela aqui" : {
+
+    },
     "list" : {
-      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "List"
           }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Lista"
-          }
-        }
-      }
-    },
-    "lists" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Lists"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Listas"
-          }
         }
       }
     },
     "my_lists" : {
-      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "My Lists"
           }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Minhas Listas"
-          }
         }
       }
     },
     "new_list" : {
-      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "New List"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nova Lista"
           }
         }
       }
@@ -201,18 +101,11 @@
 
     },
     "recents" : {
-      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Recents"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Recentes"
           }
         }
       }
@@ -224,120 +117,54 @@
             "state" : "translated",
             "value" : "Reminder Date"
           }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Prazo do Lembrete"
-          }
         }
       }
     },
-    "reminders" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Reminders"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Lembretes"
-          }
-        }
-      }
-    },
-    "tab-data" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "data"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Dados"
-          }
-        }
-      }
-    },
-    "tab-list" : {
-      "extractionState" : "manual",
     "repetition" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Lists"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Listas"
-          }
-        }
-      }
-    },
-    "tab-reminder" : {
-            "value" : "Repetição"
+            "value" : "Repetition"
           }
         }
       }
     },
     "select" : {
-      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Reminders"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Lembretes"
+            "value" : "Select"
           }
         }
       }
     },
+    "tab-data" : {
+
+    },
+    "tab-list" : {
+
+    },
+    "tab-reminder" : {
+
+    },
     "theme" : {
-      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "THEME"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "TEMA"
+            "value" : "Theme"
           }
         }
       }
     },
     "title" : {
-      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Title"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Título"
           }
         }
       }
