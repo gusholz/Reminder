@@ -15,43 +15,46 @@ struct TabBarView: View {
     var body: some View {
         HStack(alignment: .bottom){
             
-            Spacer().frame(width: 28)
+            Spacer()
             
-            VStack{
-                IconsManager.setIcon(icon: .house).padding(.bottom, 2)
+            VStack(spacing: 4) {
+                IconsManager.setIcon(icon: .house)
+                    .font(.system(size: 24))
                 Text("tab-reminder")
+                    .setBdoGroteskFont(weight: .medium, size: 10)
             }
             .foregroundColor(selectedTab == .reminders ? Color.verde : Color.branco)
             .onTapGesture {
                 selectedTab = .reminders
             }
-            .fontWeight(.bold)
             
             Spacer()
             
-            VStack{
-                IconsManager.setIcon(icon: .bulletList).padding(.bottom, 2).font(.system(size: 24))
+            VStack(spacing: 4) {
+                IconsManager.setIcon(icon: .bulletList)
+                    .font(.system(size: 24))
                 Text("tab-list")
+                    .setBdoGroteskFont(weight: .medium, size: 10)
             }
             .foregroundColor(selectedTab == .lists ? Color.verde : Color.branco)
             .onTapGesture {
                 selectedTab = .lists
             }
-            .fontWeight(.bold)
             
             Spacer()
             
-            VStack{
-                IconsManager.setIcon(icon: .dataTabBar).padding(.bottom, 2)
+            VStack(spacing: 4) {
+                IconsManager.setIcon(icon: .dataTabBar)
+                    .font(.system(size: 24))
                 Text("tab-data")
+                    .setBdoGroteskFont(weight: .medium, size: 10)
             }
             .foregroundColor(selectedTab == .data ? Color.verde : Color.branco)
             .onTapGesture {
                 selectedTab = .data
             }
-            .fontWeight(.bold)
             
-            Spacer().frame(width: 28)
+            Spacer()
         }
         .frame(height: 70)
         .background(Color.preto)
