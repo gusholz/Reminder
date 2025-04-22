@@ -13,7 +13,7 @@ enum PageTab {
 struct TabBarView: View {
     @Binding var selectedTab: PageTab
     var body: some View {
-        HStack(alignment: .bottom){
+        HStack(alignment: .lastTextBaseline){
             
             Spacer()
             
@@ -23,6 +23,7 @@ struct TabBarView: View {
                 Text("tab-reminder")
                     .setBdoGroteskFont(weight: .medium, size: 10)
             }
+            .frame(width: 60, height: 60)
             .foregroundColor(selectedTab == .reminders ? Color.verde : Color.branco)
             .onTapGesture {
                 selectedTab = .reminders
@@ -36,6 +37,7 @@ struct TabBarView: View {
                 Text("tab-list")
                     .setBdoGroteskFont(weight: .medium, size: 10)
             }
+            .frame(width: 60, height: 60)
             .foregroundColor(selectedTab == .lists ? Color.verde : Color.branco)
             .onTapGesture {
                 selectedTab = .lists
@@ -44,11 +46,12 @@ struct TabBarView: View {
             Spacer()
             
             VStack(spacing: 4) {
-                IconsManager.setIcon(icon: .dataTabBar)
+                IconsManager.setIcon(icon: .chart)
                     .font(.system(size: 24))
                 Text("tab-data")
                     .setBdoGroteskFont(weight: .medium, size: 10)
             }
+            .frame(width: 60, height: 60)
             .foregroundColor(selectedTab == .data ? Color.verde : Color.branco)
             .onTapGesture {
                 selectedTab = .data
@@ -83,6 +86,7 @@ struct TabNavigation: View {
 }
 
 #Preview {
-    TabNavigation()
+    @Previewable var coordinator = GeneralCoordinator()
+    TabNavigation().environment(coordinator)
 }
 
