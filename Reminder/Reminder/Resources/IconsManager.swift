@@ -72,6 +72,7 @@ enum ProjectIcons: String {
     case arrowLeft = "chevron.left"
     case gear = "gear"
     case chart = "chart.bar.xaxis"
+    case circleWithThreeDots = "ellipsis.circle.fill"
 }
 
 let iconsMapper: [(ProjectIcons, Image)] = [
@@ -137,7 +138,8 @@ let iconsMapper: [(ProjectIcons, Image)] = [
     (.arrowRight, Image(systemName: "chevron.right")),
     (.arrowLeft, Image(systemName: "chevron.left")),
     (.gear, Image(systemName: "gear")),
-    (.chart, Image(systemName: "chart.bar.xaxis"))
+    (.chart, Image(systemName: "chart.bar.xaxis")),
+    (.circleWithThreeDots, Image(systemName: "ellipsis.circle.fill"))
 ]
 
 struct IconsManager {
