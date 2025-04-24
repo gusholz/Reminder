@@ -8,8 +8,14 @@
 import SwiftUI
 
 struct CreateReminderScreen: View {
+    @Environment(GeneralCoordinator.self) var coordinator
+
     var body: some View {
         VStack {
+            SheetNavBar(title: "Novo Lembrete", actionTitle: "Salvar", saveAction: {
+                
+            })
+                .padding()
             ReminderForm()
         }
     }
@@ -18,4 +24,11 @@ struct CreateReminderScreen: View {
 #Preview {
     @Previewable var coordinator = GeneralCoordinator()
     CreateReminderScreen().environment(coordinator)
+}
+
+#Preview {
+    @Previewable var coordinator = GeneralCoordinator()
+    NavigationStack {
+        CreateReminderScreen().environment(coordinator)
+    }
 }

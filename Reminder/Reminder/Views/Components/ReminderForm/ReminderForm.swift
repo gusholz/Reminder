@@ -36,6 +36,8 @@ struct ReminderForm: View {
                 .foregroundStyle(.cinzaLabels)
             
             DetailsSection(selectedDate: $viewModel.selectedDate, selectedTime: $viewModel.selectedTime)
+            
+            Spacer()
         }
         .padding()
     }
