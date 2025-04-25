@@ -13,7 +13,7 @@ struct ListsScreen: View {
     var isSheet: Bool = false
     
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .center) {
             ScrollView(.vertical) {
                 ForEach(outerList, id: \.self) { list in
                     Button {
@@ -21,8 +21,7 @@ struct ListsScreen: View {
                             // Make viewModel.selectedList = list
                             return
                         }
-                        // Go to List View
-                        print("Okay computer:", list.title)
+                        coordinator.navigate(to: .listDetailView)
                         
                     } label: {
                         ListCard(color: list.color.toColor(), icon: IconsManager.setIcon(icon: .bag), title: list.title)
@@ -30,6 +29,15 @@ struct ListsScreen: View {
                     }
                 }
             }
+            
+            if !isSheet {
+                Button {
+                    coordinator.navigate(to: .createListSheet)
+                } label: {
+                    Text("create_new_list")
+                }
+            }
+            
         }
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {
@@ -42,7 +50,7 @@ struct ListsScreen: View {
                     .font(.system(size: 26))
                     .foregroundStyle(.verde)
                     .onTapGesture {
-                        coordinator.present(sheet: .createListSheet)
+                        coordinator.navigate(to: .createReminderSheet)
                     }
             }
         }

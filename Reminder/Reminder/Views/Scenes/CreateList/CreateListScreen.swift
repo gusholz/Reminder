@@ -9,12 +9,15 @@ import SwiftUI
 
 struct CreateListScreen: View {
     @Environment(GeneralCoordinator.self) var coordinator
-
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
-            SheetNavBar(title: "Nova Lista", actionTitle: "Salvar") {
+            GenericNavBar(title: "new_list", actionTitle: "save") {
                 
+            } dismissAction: {
+                coordinator.pop()
             }
+            
             Text("new_list")
                 .setSfProDisplayFont(variation: .regular, size: 12)
                 .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 0))
@@ -34,6 +37,8 @@ struct CreateListScreen: View {
             
             Spacer()
         }
+        .navigationTitle("")
+        .navigationBarHidden(true)
         .padding()
     }
 }

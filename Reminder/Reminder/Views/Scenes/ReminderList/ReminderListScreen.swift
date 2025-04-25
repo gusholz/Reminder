@@ -14,13 +14,13 @@ struct ReminderListScreen: View {
         GridItem(.flexible(minimum: 80)),
         GridItem(.flexible(minimum: 80))
     ]
-
+    
     @State private var outerList: [ReminderList] = mockListFactory()
     @State private var innerList: [Bool] = [false, false, false]
     
     let todatReminderList: [Reminder] = mockReminderFactory()
     let recentReminderList: [Reminder] = mockReminderFactory("Pagar conta de luz")
-
+    
     
     var body: some View {
         ScrollView(.vertical) {
@@ -32,8 +32,7 @@ struct ReminderListScreen: View {
                     LazyHGrid(rows: rows, spacing: 20) {
                         ForEach(outerList, id: \.self) { list in
                             Button {
-                                // Go to List View
-                                print("Okay computer:", list.title)
+                                coordinator.navigate(to: .listDetailView)
                             } label: {
                                 ListCard(color: list.color.toColor(), icon: IconsManager.setIcon(icon: .bag), title: list.title)
                             }
@@ -80,24 +79,26 @@ struct ReminderListScreen: View {
             ToolbarItem(placement: .topBarLeading) {
                 Image("logo")
             }
-                        
+            
             ToolbarItemGroup {
                 HStack {
                     Button {
                         
                     } label: {
                         IconsManager.setIcon(icon: .gear)
+                            .foregroundStyle(.branco)
+                            .font(.system(size: 26))
                     }
                     
                     Spacer()
                     
                     Button {
-                        coordinator.present(sheet: .createReminderSheet)
+                        coordinator.navigate(to: .createReminderSheet)
                     } label: {
-                        IconsManager.setIcon(icon: .plusCircle)
+                        IconsManager.setIcon(icon: .plusCircleFilled)
+                            .font(.system(size: 26))
+                            .foregroundStyle(.verde)
                     }
-                    
-                    
                 }
             }
         }

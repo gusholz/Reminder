@@ -61,7 +61,12 @@ struct IconSelection: View {
     ]
     
     var body: some View {
+        @Environment(GeneralCoordinator.self) var coordinator
+
         VStack(alignment: .leading) {
+            GenericNavBar(title: "new_list", actionTitle: "", saveAction: {}, dismissAction: {
+                coordinator.dismissSheet()
+            }, hasSaveAction: false)
             Text("icon")
                 .foregroundStyle(.branco)
                 .setBdoGroteskFont(weight: .demibold, size: 18)
@@ -94,6 +99,8 @@ struct IconSelection: View {
 }
 
 #Preview {
+    @Previewable var coordinator = GeneralCoordinator()
     IconSelection()
+        .environment(coordinator)
         .background(.preto)
 }

@@ -20,11 +20,16 @@ enum DaysOfTheWeek: String, CaseIterable, Identifiable {
 }
 
 struct DaySelection: View {
+    @Environment(GeneralCoordinator.self) var coordinator
     // TODO: Move this State to the ReminderFormViewModel
     @State var selectedDays: [Bool] = [false, false, false, false, false, false, false]
     
     var body: some View {
         VStack {
+            GenericNavBar(title: "repetition", actionTitle: "", saveAction: {}, dismissAction: {
+                coordinator.dismissSheet()
+            }, hasSaveAction: false)
+            
             ForEach(Array(DaysOfTheWeek.allCases.enumerated()), id: \.element.id) { index, day in
                 HStack {
                     Text(day.rawValue.capitalized)
@@ -37,7 +42,6 @@ struct DaySelection: View {
                 Divider()
 
             }
-           
         }
         .padding()
         .background(.cinzaBackground)
@@ -45,5 +49,6 @@ struct DaySelection: View {
 }
 
 #Preview {
-    DaySelection()
+    @Previewable var coordinator = GeneralCoordinator()
+    DaySelection().environment(coordinator)
 }

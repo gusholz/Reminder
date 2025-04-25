@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct ListDetailsScreen: View {
+    @Environment(GeneralCoordinator.self) var coordinator
     let recentReminderList: [Reminder] = mockReminderFactory("Pagar conta de luz")
     // @Binding var reminderList: ReminderList
     
     var body: some View {
         VStack(alignment: .leading) {
+            // TODO: Substituir por reminderList.name e reminderList.description
             Text("List name")
                 .setBdoGroteskFont(weight: .medium, size: 30)
                 .padding(.bottom, 12)
@@ -39,7 +41,7 @@ struct ListDetailsScreen: View {
                 IconsManager.setIcon(icon: .arrowLeft)
                     .frame(width: 54, alignment: .leading)
                     .onTapGesture {
-                        print("Ohiyo!!")
+                        coordinator.pop()
                     }
             }
             
@@ -59,9 +61,10 @@ struct ListDetailsScreen: View {
             }
             
             ToolbarItem {
-               
+                
             }
         }
+        .navigationBarBackButtonHidden()
         // TODO: Update to use the ReminderListThemeColor
         .toolbarBackground(.laranja, for: .navigationBar)
         .toolbarBackground(.visible, for: .navigationBar)
@@ -69,7 +72,8 @@ struct ListDetailsScreen: View {
 }
 
 #Preview {
+    @Previewable var coordinator = GeneralCoordinator()
     NavigationStack {
-        ListDetailsScreen()
+        ListDetailsScreen().environment(coordinator)
     }
 }
