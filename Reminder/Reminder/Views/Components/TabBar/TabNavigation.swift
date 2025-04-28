@@ -71,7 +71,7 @@ struct TabNavigation: View {
     init() {
         self.pages[PageTab.reminders] = AnyView(ReminderListScreen())
         self.pages[PageTab.lists] = AnyView(ListsScreen())
-        self.pages[PageTab.data] = AnyView(Text("Inserir Tela aqui"))
+        self.pages[PageTab.data] = AnyView(ConfigurationScreen())
     }
     
     var body: some View {

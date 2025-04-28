@@ -4,6 +4,42 @@
     "" : {
 
     },
+    "12_hrs" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "12 Hrs"
+          }
+        }
+      }
+    },
+    "24_rs" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "24 Hrs"
+          }
+        }
+      }
+    },
+    "configurations" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Configurations"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Configurações"
+          }
+        }
+      }
+    },
     "create_new_list" : {
       "localizations" : {
         "en" : {
@@ -32,6 +68,54 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Data"
+          }
+        }
+      }
+    },
+    "date_and_hour" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Date and Hour"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Data e Hora"
+          }
+        }
+      }
+    },
+    "date_format" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Date Format"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Formato de Data"
+          }
+        }
+      }
+    },
+    "dd_mm_yy" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "dd/mm/yy"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "dd/mm/aa"
           }
         }
       }
@@ -100,6 +184,22 @@
         }
       }
     },
+    "hour_format" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hour Format"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Formato de Hora"
+          }
+        }
+      }
+    },
     "icon" : {
       "localizations" : {
         "en" : {
@@ -115,9 +215,6 @@
           }
         }
       }
-    },
-    "Inserir Tela aqui" : {
-
     },
     "list" : {
       "localizations" : {
@@ -163,6 +260,22 @@
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Nome"
+          }
+        }
+      }
+    },
+    "mm_dd_yy" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mm/dd/yy"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "mm/dd/aa"
           }
         }
       }
@@ -217,6 +330,22 @@
     },
     "Nunca" : {
 
+    },
+    "personalize" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Personalize"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Personalizar"
+          }
+        }
+      }
     },
     "recents" : {
       "localizations" : {
@@ -374,6 +503,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Título"
+          }
+        }
+      }
+    },
+    "widget" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Widget"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Widget"
           }
         }
       }
