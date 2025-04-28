@@ -90,10 +90,13 @@ struct DetailsSection: View {
                 Button {
                     coordinator.present(sheet: .selectedDaysSheet)
                 } label: {
-                    // TODO: Adicionar lógica na view model que modifica essa label com base no state da viewModel.selectedDays
-                    Text("Nunca")
-                        .setBdoGroteskFont(weight: .regular, size: 14)
-                        .foregroundStyle(.cinzaLabels)
+                    HStack {
+                        Text("Nunca")
+                            .setBdoGroteskFont(weight: .regular, size: 14)
+                            .foregroundStyle(.cinzaLabels)
+                        IconsManager.setIcon(icon: .arrowRight)
+                            .foregroundStyle(.cinzaLabels)
+                    }
                 }
             }
         }

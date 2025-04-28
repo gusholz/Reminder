@@ -12,12 +12,18 @@ struct CreateReminderScreen: View {
 
     var body: some View {
         VStack {
-            SheetNavBar(title: "Novo Lembrete", actionTitle: "Salvar", saveAction: {
+            GenericNavBar(title: "new_reminder", actionTitle: "save") {
                 
-            })
+            } dismissAction: {
+                coordinator.pop()
+            }
                 .padding()
-            ReminderForm()
+            ScrollView(.vertical){
+                ReminderForm()
+            }
         }
+        .navigationTitle("")
+        .navigationBarHidden(true)
     }
 }
 

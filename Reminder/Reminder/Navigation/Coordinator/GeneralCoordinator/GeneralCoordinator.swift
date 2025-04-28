@@ -9,7 +9,11 @@ import SwiftUI
 
 enum Page: String, Identifiable {
     case main
-        var id: String {
+    case listDetailView
+    case createReminderSheet
+    case createListSheet
+    
+    var id: String {
         self.rawValue
     }
     
@@ -18,6 +22,12 @@ enum Page: String, Identifiable {
         switch self {
         case .main:
             ContentView()
+        case .listDetailView:
+            ListDetailsScreen()
+        case .createReminderSheet:
+            CreateReminderScreen()
+        case .createListSheet:
+            CreateListScreen()
         }
     }
 }
@@ -26,8 +36,6 @@ enum Sheets: String, Identifiable {
     case main
     case selectedDaysSheet
     case selectListSheet
-    case createReminderSheet
-    case createListSheet
     
     var id: String {
         self.rawValue
@@ -42,10 +50,6 @@ enum Sheets: String, Identifiable {
             DaySelection()
         case .selectListSheet:
             ListsScreen()
-        case .createReminderSheet:
-            CreateReminderScreen()
-        case .createListSheet:
-            CreateListScreen()
         }
     }
 }
