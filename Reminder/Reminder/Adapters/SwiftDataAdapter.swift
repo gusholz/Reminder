@@ -8,13 +8,6 @@
 import SwiftUI
 import SwiftData
 
-
-
-
-
-
-
-
 class SwiftDataAdapter: DataBaseAdapter {
     private let dataContainer: ModelContainer
     private let dataContext: ModelContext

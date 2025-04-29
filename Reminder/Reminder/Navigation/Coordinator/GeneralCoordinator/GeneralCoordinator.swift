@@ -79,9 +79,12 @@ class GeneralCoordinator {
     var path = NavigationPath()
     var sheet: Sheets?
     var fullScreenCover: FullScreenCover?
+    
+    @MainActor
+    var reminderListViewModel = ReminderListViewModel()
 
-    func build(page: Page) -> some View {
-        return page.view
+    @MainActor func build(page: Page) -> some View {
+        return page.view.environment(reminderListViewModel)
     }
     func build(sheet: Sheets) -> some View {
         return sheet.view

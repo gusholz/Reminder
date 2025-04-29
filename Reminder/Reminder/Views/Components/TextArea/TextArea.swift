@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct TextArea: View {
-    @State var title: String = ""
-    @State var description: String = ""
+    @Binding var title: String
+    @Binding var description: String
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -37,8 +37,4 @@ struct TextArea: View {
         }
 
     }
-}
-
-#Preview {
-    TextArea()
 }

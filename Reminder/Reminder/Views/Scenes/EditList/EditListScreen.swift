@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct EditListScreen: View {
+    @State var title: String = ""
+    @State var description: String = ""
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
             Text("new_list")
@@ -15,7 +18,7 @@ struct EditListScreen: View {
                 .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 0))
                 .foregroundStyle(.cinzaLabels)
             
-            TextArea()
+            TextArea(title: $title, description: $description)
             
             Divider()
                 .overlay(.cinzaLabels)
