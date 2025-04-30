@@ -15,7 +15,7 @@ struct ListsScreen: View {
         VStack(alignment: .center) {
             ScrollView(.vertical) {
                 if reminderListViewModel.remindersLists.isEmpty {
-                    Text("Nenhuma lista criada até o momento 🤝")
+                    Text("no_lists")
                 } else {
                     ForEach(reminderListViewModel.remindersLists, id: \.self) { list in
                         Button {

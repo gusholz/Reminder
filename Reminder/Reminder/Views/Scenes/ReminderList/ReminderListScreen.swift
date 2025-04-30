@@ -10,125 +10,20 @@ import SwiftUI
 struct ReminderListScreen: View {
     @Environment(GeneralCoordinator.self) var coordinator
     @Environment(ReminderListViewModel.self) var reminderListViewModel
-    
-    let rows = [
-        GridItem(.flexible(minimum: 80)),
-        GridItem(.flexible(minimum: 80))
-    ]
-    
-    func formatHourAndDay(_ date: Date) -> String {
-        let formatter = DateFormatter()
-        formatter.timeZone = TimeZone(abbreviation: "UTC")
-        formatter.dateFormat = "E, HH:mm" // E = abbreviated weekday, HH:mm = 24-hour time
-        return formatter.string(from: date)
-    }
 
     var body: some View {
         ScrollView(.vertical) {
-            // Lists list section
-            
-            VStack(alignment: .leading) {
-                Text("my_lists")
-                    .setBdoGroteskFont(weight: .demibold, size: 18)
-                ScrollView(.horizontal) {
-                    LazyHGrid(rows: rows, spacing: 20) {
-                        if reminderListViewModel.remindersLists.isEmpty {
-                            Text("Nenhuma lista criada até o momento 🤝")
-                        } else {
-                            ForEach(reminderListViewModel.remindersLists, id: \.self) { list in
-                                Button {
-                                    reminderListViewModel.selectedReminderList = list
-                                    coordinator.navigate(to: .listDetailView)
-                                } label: {
-                                    ListCard(
-                                        color: (list.color.extractColorFromNamedColor() ?? list.color.extractRGBColor()) ?? Color(.branco),
-                                        icon: IconsManager.getIcon(iconString: list.icon),
-                                        title: list.title
-                                    )
-                                }
-                            }
-                        }
-                    }
-                }
-                .frame(height: 180)
-            }
+            ListsPreviewSection(reminderLists: reminderListViewModel.remindersLists)
             
             Divider()
                 .overlay(.cinzaLabels)
             
-            // Today Reminder Section
-            VStack(alignment: .leading) {
-                Text("for_today")
-                    .foregroundStyle(.branco)
-                    .setBdoGroteskFont(weight: .demibold, size: 18)
-                    .padding(EdgeInsets(top: 16, leading: 0, bottom: 16, trailing: 0))
-                if reminderListViewModel.reminders.filter({ reminderListViewModel.isReminderForToday($0.alertTime) && !$0.isFinished}).isEmpty {
-                    Text("Todos os lembretes foram finalizados 😎! Para criar um novo basta clickar no ícone no canto superior direito da tela")
-                        .setBdoGroteskFont(weight: .medium, size: 16)
-                } else {
-                    ForEach(reminderListViewModel.reminders.filter { reminderListViewModel.isReminderForToday($0.alertTime) && !$0.isFinished }, id: \.id) { reminder in
-                        
-                        // TODO: Criar função auxiliar que modifica a colorTag com base na cor da reminderList pai do reminder em questão
-                        ReminderCard(
-                            title: reminder.title,
-                            time: formatHourAndDay(reminder.alertTime),
-                            textTag: reminder.description,
-                            colorTag: .amarelo,
-                            action: {
-                                reminderListViewModel.finishReminder(reminder.id)
-                        })
-                        .contextMenu {
-                            Button {
-                                // TODO: coordinator.goToEditReminderScreen(reminder.id)
-                                print(reminder.alertTime)
-                            } label: {
-                                HStack {
-                                    Text("Editar")
-                                    IconsManager.setIcon(icon: .gear)
-                                }
-                            }
-                            
-                            Button {
-                                reminderListViewModel.deleteReminder(reminder)
-                                reminderListViewModel.reminders = reminderListViewModel.getAllReminders()
-                                reminderListViewModel.remindersLists = reminderListViewModel.getAllRemindersLists()
-                            } label: {
-                                HStack {
-                                    Text("Apagar")
-                                    IconsManager.setIcon(icon: .trash)
-                                }
-                            }
-                        }
-                            .padding(.bottom, 24)
-                    }
-                }
-            }
+            RemindersOfTheDaySection()
             
             Divider()
                 .overlay(.cinzaLabels)
             
-            // Next Days Reminder Section
-            VStack(alignment: .leading) {
-                Text("next_days")
-                    .foregroundStyle(.branco)
-                    .setBdoGroteskFont(weight: .demibold, size: 18)
-                    .padding(EdgeInsets(top: 16, leading: 0, bottom: 16, trailing: 0))
-                if reminderListViewModel.reminders.filter({!reminderListViewModel.isReminderForToday($0.alertTime) && !$0.isFinished}).isEmpty {
-                    Text("Todos os lembretes foram finalizados 😎! Para criar um novo basta clickar no ícone no canto superior direito da tela")
-                        .setBdoGroteskFont(weight: .medium, size: 16)
-                } else {
-                    ForEach(reminderListViewModel.reminders.filter { !reminderListViewModel.isReminderForToday($0.alertTime) && !$0.isFinished}, id: \.id) { reminder in
-                        ReminderCard(
-                            title: reminder.title,
-                            time: formatHourAndDay(reminder.alertTime),
-                            textTag: reminder.description,
-                            action: {
-                                reminderListViewModel.finishReminder(reminder.id)
-                        })
-                        .padding(.bottom, 24)
-                    }
-                }
-            }
+            RemindersOfTheDaySection()
         }
         .task {
             reminderListViewModel.reminders = reminderListViewModel.getAllReminders()

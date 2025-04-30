@@ -24,8 +24,21 @@
         }
       }
     },
-    "Apagar" : {
-
+    "all_reminders_empty" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "All reminders have been completed 😎! To create a new one, simply click on the icon in the top right corner of the screen"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Todos os lembretes foram finalizados 😎! Para criar um novo basta clicar no ícone no canto superior direito da tela"
+          }
+        }
+      }
     },
     "configurations" : {
       "localizations" : {
@@ -139,6 +152,9 @@
         }
       }
     },
+    "delete" : {
+
+    },
     "description" : {
       "localizations" : {
         "en" : {
@@ -171,7 +187,7 @@
         }
       }
     },
-    "Editar" : {
+    "edit" : {
 
     },
     "for_today" : {
@@ -244,12 +260,12 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Finished Reminder"
+            "value" : "Finished Reminders"
           }
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Lembretes Finalizados"
           }
         }
@@ -337,9 +353,6 @@
         }
       }
     },
-    "Nenhuma lista criada até o momento 🤝" : {
-
-    },
     "new_list" : {
       "localizations" : {
         "en" : {
@@ -384,6 +397,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Próximos dias"
+          }
+        }
+      }
+    },
+    "no_lists" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No lists created yet 🤝"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nenhuma lista criada até o momento 🤝"
           }
         }
       }
@@ -567,9 +596,6 @@
           }
         }
       }
-    },
-    "Todos os lembretes foram finalizados 😎! Para criar um novo basta clickar no ícone no canto superior direito da tela" : {
-
     },
     "widget" : {
       "localizations" : {
