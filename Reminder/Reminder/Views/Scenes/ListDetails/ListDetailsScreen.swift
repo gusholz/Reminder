@@ -9,16 +9,17 @@ import SwiftUI
 
 struct ListDetailsScreen: View {
     @Environment(GeneralCoordinator.self) var coordinator
-    let recentReminderList: [Reminder] = mockReminderFactory("Pagar conta de luz")
+    @Environment(ReminderListViewModel.self) var reminderListViewModel
+
     // @Binding var reminderList: ReminderList
     
     var body: some View {
         VStack(alignment: .leading) {
             // TODO: Substituir por reminderList.name e reminderList.description
-            Text("List name")
+            Text(reminderListViewModel.selectedReminderList?.title ?? "Unknown List")
                 .setBdoGroteskFont(weight: .medium, size: 30)
                 .padding(.bottom, 12)
-            Text("List description")
+            Text(reminderListViewModel.selectedReminderList?.description ?? "")
                 .setBdoGroteskFont(weight: .regular, size: 14)
             
             Divider()
@@ -26,8 +27,10 @@ struct ListDetailsScreen: View {
                 .padding(.bottom, 8)
             
             ScrollView {
-                ForEach(recentReminderList, id: \.id) { reminder in
-                    ReminderCard(isChecked: .constant(false), title: reminder.title, time: "12:45", textTag: reminder.description)
+                ForEach(reminderListViewModel.reminders, id: \.id) { reminder in
+                    ReminderCard(title: reminder.title, time: "12:45", textTag: reminder.description, action: {
+                        
+                    })
                         .padding(.bottom, 24)
                 }
             }
@@ -68,12 +71,5 @@ struct ListDetailsScreen: View {
         // TODO: Update to use the ReminderListThemeColor
         .toolbarBackground(.laranja, for: .navigationBar)
         .toolbarBackground(.visible, for: .navigationBar)
-    }
-}
-
-#Preview {
-    @Previewable var coordinator = GeneralCoordinator()
-    NavigationStack {
-        ListDetailsScreen().environment(coordinator)
     }
 }

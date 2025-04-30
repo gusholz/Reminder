@@ -71,7 +71,7 @@ struct TabNavigation: View {
     init() {
         self.pages[PageTab.reminders] = AnyView(ReminderListScreen())
         self.pages[PageTab.lists] = AnyView(ListsScreen())
-        self.pages[PageTab.data] = AnyView(ConfigurationScreen())
+        self.pages[PageTab.data] = AnyView(DataScreen())
     }
     
     var body: some View {

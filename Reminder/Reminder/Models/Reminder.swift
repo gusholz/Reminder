@@ -14,13 +14,15 @@ class ReminderDataBaseModel {
     var title: String
     var reminderDescription: String
     var alertTime: Date
+    var isFinished: Bool
     @Relationship(deleteRule: .cascade) var listReference: ReminderListDataBaseModel?
     
-    init(id: UUID, title: String, description: String, alertTime: Date, listReference: UUID? = nil) {
+    init(id: UUID, title: String, description: String, alertTime: Date, isFinished: Bool = false, listReference: UUID? = nil) {
         self.id = id
         self.title = title
         self.reminderDescription = description
         self.alertTime = alertTime
+        self.isFinished = isFinished
     }
 }
 
@@ -30,4 +32,5 @@ struct Reminder: Codable, Identifiable {
     var description: String
     var alertTime: Date    
     var listReference: UUID?
+    var isFinished: Bool
 }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct IconCarousel: View {
-    @State private var selectedIcon: ProjectIcons = .bulletList
+    @Binding var selectedIcon: ProjectIcons
     @State private var isSheetOpen: Bool = false
     
     let defaultIcons: [ProjectIcons] = [
@@ -55,10 +55,15 @@ struct IconCarousel: View {
                         IconsManager.setIcon(icon: .plusCircle)
                             .scaleEffect(1.4)
                             .foregroundStyle(.preto)
+                            .overlay {
+                                if !defaultIcons.contains(selectedIcon) {
+                                    CircleOutline()
+                                }
+                            }
                     }
                 }
                 .sheet(isPresented: $isSheetOpen) {
-                    IconSelection()
+                    IconSelection(selectedIcon: $selectedIcon)
                 }
             }
         }
@@ -67,5 +72,6 @@ struct IconCarousel: View {
 }
 
 #Preview {
-    IconCarousel()
+    @Previewable @State var icon: ProjectIcons = .ant
+    IconCarousel(selectedIcon: $icon)
 }

@@ -15,8 +15,9 @@ struct ReminderForm: View {
     @Binding var reminderDescription: String
     @Binding var selectedList: String
     @Binding var selectedDate: Date
-    @Binding var selectedHour: Date
-    @Binding var selectedDays: [Int]
+    @Binding var selectedDays: [Bool]
+
+    @State private var isSelectListSheetOpen: Bool = false
     
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
@@ -32,8 +33,7 @@ struct ReminderForm: View {
                 .foregroundStyle(.cinzaLabels)
             
             Button {
-                // TODO: Pass the view parameter isSheet = true
-                coordinator.present(sheet: .selectListSheet)
+                isSelectListSheetOpen.toggle()
             } label: {
                 ListSelectionRow(selectedList: $viewModel.selectedList)
             }
@@ -43,9 +43,12 @@ struct ReminderForm: View {
                 .padding(EdgeInsets(top: 8, leading: 16, bottom: 0, trailing: 0))
                 .foregroundStyle(.cinzaLabels)
             
-            DetailsSection(selectedDate: $viewModel.selectedDate, selectedTime: $viewModel.selectedTime)
+            DetailsSection(selectedDate: $selectedDate, selectedDays: $selectedDays)
             
             Spacer()
+        }
+        .sheet(isPresented: $isSelectListSheetOpen){
+            SelectListScreen(action: {})
         }
         .padding()
     }

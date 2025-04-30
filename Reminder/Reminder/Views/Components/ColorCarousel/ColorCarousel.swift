@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ColorCarousel: View {
     @State private var isColorPickerOpen = false;
-    @State private var selectedColor: Color = .clear;
+    @Binding var selectedColor: Color
     
     let defaultColors: [Color] = [
         .laranja,
@@ -50,5 +50,6 @@ struct ColorCarousel: View {
 }
 
 #Preview {
-    ColorCarousel()
+    @Previewable @State var selectedColor: Color = .red
+    ColorCarousel(selectedColor: $selectedColor)
 }

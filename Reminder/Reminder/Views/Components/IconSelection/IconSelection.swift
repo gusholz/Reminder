@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct IconSelection: View {
-    @State private var selectedIcon: ProjectIcons = .pencilAndOutline
+    @Binding var selectedIcon: ProjectIcons
     
     let iconsList: [ProjectIcons] = [
         .pencilAndOutline,
@@ -100,7 +100,8 @@ struct IconSelection: View {
 
 #Preview {
     @Previewable var coordinator = GeneralCoordinator()
-    IconSelection()
+    @Previewable @State var selectedIcon: ProjectIcons = .ant
+    IconSelection(selectedIcon: $selectedIcon)
         .environment(coordinator)
         .background(.preto)
 }

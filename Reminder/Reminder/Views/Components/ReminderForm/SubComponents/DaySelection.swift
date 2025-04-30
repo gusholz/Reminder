@@ -21,8 +21,7 @@ enum DaysOfTheWeek: String, CaseIterable, Identifiable {
 
 struct DaySelection: View {
     @Environment(GeneralCoordinator.self) var coordinator
-    // TODO: Move this State to the ReminderFormViewModel
-    @State var selectedDays: [Bool] = [false, false, false, false, false, false, false]
+    @Binding var selectedDays: [Bool]
     
     var body: some View {
         VStack {
@@ -46,9 +45,4 @@ struct DaySelection: View {
         .padding()
         .background(.cinzaBackground)
     }
-}
-
-#Preview {
-    @Previewable var coordinator = GeneralCoordinator()
-    DaySelection().environment(coordinator)
 }

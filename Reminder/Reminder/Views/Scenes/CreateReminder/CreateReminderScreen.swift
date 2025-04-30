@@ -15,8 +15,7 @@ struct CreateReminderScreen: View {
     @State var reminderDescription: String = ""
     @State var selectedList: String = ""
     @State var selectedDate: Date = Date.now
-    @State var selectedHour: Date = Date.now
-    @State var selectedDays: [Int] = []
+    @State var selectedDays: [Bool] = [false, false, false, false, false, false, false]
 
     var body: some View {
         VStack {
@@ -26,20 +25,23 @@ struct CreateReminderScreen: View {
                 }
                 var newReminder: Reminder
                 if selectedList.isEmpty {
-                    newReminder = Reminder(id: .init(), title: reminderTitle, description: reminderDescription, alertTime: selectedDate)
+                    newReminder = Reminder(id: .init(), title: reminderTitle, description: reminderDescription, alertTime: selectedDate, isFinished: false)
                 } else {
-                    newReminder = Reminder(id: .init(), title: reminderTitle, description: reminderDescription, alertTime: selectedDate, listReference: UUID(uuidString: selectedList))
+                    newReminder = Reminder(id: .init(), title: reminderTitle, description: reminderDescription, alertTime: selectedDate, listReference: UUID(uuidString: selectedList), isFinished: false)
                 }
                 
                 reminderListViewModel.createReminder(newReminder)
-                
+                coordinator.pop()
             } dismissAction: {
                 coordinator.pop()
             }
                 .padding()
             ScrollView(.vertical){
-                ReminderForm(reminderTitle: $reminderTitle, reminderDescription: $reminderDescription, selectedList: $selectedList, selectedDate: $selectedDate, selectedHour: $selectedHour, selectedDays: $selectedDays)
+                ReminderForm(reminderTitle: $reminderTitle, reminderDescription: $reminderDescription, selectedList: $selectedList, selectedDate: $selectedDate, selectedDays: $selectedDays)
             }
+        }
+        .onChange(of: selectedDate) {
+            print(selectedDate)
         }
         .navigationTitle("")
         .navigationBarHidden(true)

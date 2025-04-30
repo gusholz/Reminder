@@ -24,7 +24,6 @@ class SwiftDataReminderAdapter: DatabaseReminderAdapter {
     }
     
     func createReminder(reminder: Reminder) {
-        
         dataContext.insert(ReminderDataBaseModel(id: reminder.id, title: reminder.title, description: reminder.description, alertTime: reminder.alertTime, listReference: reminder.listReference))
         self.saveChanges()
     }
@@ -39,6 +38,7 @@ class SwiftDataReminderAdapter: DatabaseReminderAdapter {
             element.title = updatedReminder.title
             element.alertTime = updatedReminder.alertTime
             element.reminderDescription = updatedReminder.description
+            element.isFinished = updatedReminder.isFinished
             do{
                 element.listReference = try dataContext.fetch(FetchDescriptor<ReminderListDataBaseModel>()).first { reminderList in
                     return reminderList.id == updatedReminder.listReference
@@ -74,7 +74,7 @@ class SwiftDataReminderAdapter: DatabaseReminderAdapter {
     func getAllReminders() -> [Reminder] {
         do {
             return try dataContext.fetch(FetchDescriptor<ReminderDataBaseModel>()).map { reminder in
-                return Reminder(id: reminder.id, title: reminder.title, description: reminder.reminderDescription, alertTime: reminder.alertTime, listReference: reminder.listReference?.id)
+                return Reminder(id: reminder.id, title: reminder.title, description: reminder.reminderDescription, alertTime: reminder.alertTime, listReference: reminder.listReference?.id, isFinished: reminder.isFinished)
             }
         } catch {
             fatalError(error.localizedDescription)
@@ -87,7 +87,7 @@ class SwiftDataReminderAdapter: DatabaseReminderAdapter {
                 return dataReminder.id == UUID(uuidString: id)
             })
             if let reminder = dataElement{
-                return Reminder(id: reminder.id, title: reminder.title, description: reminder.reminderDescription, alertTime: reminder.alertTime)
+                return Reminder(id: reminder.id, title: reminder.title, description: reminder.reminderDescription, alertTime: reminder.alertTime, isFinished: reminder.isFinished)
             }
             return nil
             

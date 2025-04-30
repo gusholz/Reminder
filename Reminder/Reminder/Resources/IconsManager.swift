@@ -150,4 +150,8 @@ struct IconsManager {
         
         return iconImage.1
     }
+    
+    static func getIcon(iconString: String) -> Image {
+        return Image(systemName: iconString)
+    }
 }

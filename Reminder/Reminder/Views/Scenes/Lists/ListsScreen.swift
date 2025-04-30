@@ -9,35 +9,39 @@ import SwiftUI
 
 struct ListsScreen: View {
     @Environment(GeneralCoordinator.self) var coordinator
-    @State private var outerList: [ReminderList] = mockListFactory()
-    var isSheet: Bool = false
+    @Environment(ReminderListViewModel.self) var reminderListViewModel
     
     var body: some View {
         VStack(alignment: .center) {
             ScrollView(.vertical) {
-                ForEach(outerList, id: \.self) { list in
-                    Button {
-                        if isSheet {
-                            // Make viewModel.selectedList = list
-                            return
+                if reminderListViewModel.remindersLists.isEmpty {
+                    Text("Nenhuma lista criada até o momento 🤝")
+                } else {
+                    ForEach(reminderListViewModel.remindersLists, id: \.self) { list in
+                        Button {
+                            reminderListViewModel.selectedReminderList = list
+                            coordinator.navigate(to: .listDetailView)
+                            
+                        } label: {
+                            ListCard(
+                                color: (list.color.extractColorFromNamedColor() ?? list.color.extractRGBColor()) ?? Color(.branco),
+                                icon: IconsManager.getIcon(iconString: list.icon),
+                                title: list.title)
+                                .padding(.bottom, 8)
                         }
-                        coordinator.navigate(to: .listDetailView)
-                        
-                    } label: {
-                        ListCard(color: list.color.toColor(), icon: IconsManager.setIcon(icon: .bag), title: list.title)
-                            .padding(.bottom, 8)
                     }
                 }
             }
             
-            if !isSheet {
                 Button {
                     coordinator.navigate(to: .createListSheet)
                 } label: {
                     Text("create_new_list")
                 }
-            }
             
+        }
+        .task {
+            reminderListViewModel.remindersLists = reminderListViewModel.getAllRemindersLists()
         }
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {

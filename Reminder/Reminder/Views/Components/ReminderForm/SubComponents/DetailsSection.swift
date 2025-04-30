@@ -11,21 +11,9 @@ struct DetailsSection: View {
     @Environment(GeneralCoordinator.self) var coordinator
     
     @Binding var selectedDate: Date
-    @Binding var selectedTime: Date
-    @State private var isDataToggleOn: Bool = false
-    @State private var isTimeToggleOn: Bool = false
-    
-    func formatDate(_ date: Date) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .short
-        return dateFormatter.string(from: date)
-    }
-    
-    func formatTIme(_ date: Date) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "HH:mm"
-        return dateFormatter.string(from: date)
-    }
+    @Binding var selectedDays: [Bool]
+    @State private var isDataToggleOn: Bool = false;
+    @State private var isSheetOpen: Bool = false;
     
     var body: some View {
         VStack {
@@ -34,7 +22,7 @@ struct DetailsSection: View {
                     Text("date")
                         .setBdoGroteskFont(weight: .regular, size: 16)
                         .foregroundStyle(.branco)
-                    Text(formatDate(selectedDate))
+                    Text(selectedDate.formatted(date: .abbreviated, time: .standard))
                         .setBdoGroteskFont(weight: .regular, size: 10)
                         .foregroundStyle(.cinzaLabels)
                     
@@ -46,40 +34,14 @@ struct DetailsSection: View {
             }
             
             if isDataToggleOn {
-                DatePicker("reminder_date", selection: $selectedTime, displayedComponents: .date)
+                DatePicker("reminder_date", selection: $selectedDate, in: Date()...)
                     .datePickerStyle(.graphical)
                     .tint(.verde)
                     .frame(minHeight: 360)
             }
             
-            
             Divider()
-            
-            HStack {
-                VStack(alignment: .leading) {
-                    Text("hour")
-                        .setBdoGroteskFont(weight: .regular, size: 16)
-                        .foregroundStyle(.branco)
-                    // TODO: Se não colocar um horário colocar um horário default de 00:00 hrs
-                    Text(formatTIme(selectedTime))
-                        .setBdoGroteskFont(weight: .regular, size: 10)
-                        .foregroundStyle(.cinzaLabels)
-                    
-                }
-                
-                Toggle(isOn: $isTimeToggleOn) {
-                    
-                }
-            }
-            
-            if isTimeToggleOn {
-                DatePicker("", selection: $selectedTime, displayedComponents: [.hourAndMinute])
-                    .datePickerStyle(.wheel)
-                    .tint(.verde)
-            }
-            
-            Divider()
-            
+                        
             HStack {
                 Text("repetition")
                     .setBdoGroteskFont(weight: .regular, size: 16)
@@ -88,7 +50,7 @@ struct DetailsSection: View {
                 Spacer()
                 
                 Button {
-                    coordinator.present(sheet: .selectedDaysSheet)
+                    isSheetOpen.toggle()
                 } label: {
                     HStack {
                         Text("Nunca")
@@ -100,6 +62,9 @@ struct DetailsSection: View {
                 }
             }
         }
+        .sheet(isPresented: $isSheetOpen) {
+            DaySelection(selectedDays: $selectedDays)
+        }
         .padding(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
         .background(.cinzaBackground)
         .cornerRadius(10)
@@ -108,7 +73,7 @@ struct DetailsSection: View {
 
 #Preview {
     @Previewable @State var selectedDate = Date.now
-    @Previewable @State var selectedTime = Date.now
+    @Previewable @State var selectedDays = [false, true, false]
     @Previewable var coordinator = GeneralCoordinator()
-    DetailsSection(selectedDate: $selectedDate, selectedTime: $selectedTime).environment(coordinator)
+    DetailsSection(selectedDate: $selectedDate, selectedDays: $selectedDays).environment(coordinator)
 }

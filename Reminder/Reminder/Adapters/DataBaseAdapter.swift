@@ -36,12 +36,10 @@ protocol DatabaseReminderAdapter {
     func deleteReminder(id: String) -> Void    
 }
 
-
 protocol DatabaseReminderListAdapter {
     func createReminderList(reminder: ReminderList) -> Void
     func getAllReminderList() -> [ReminderList]
     func getReminderList(id: String) -> ReminderList?
     func updateReminderList(id: String, updatedList: ReminderList) -> Void
     func deleteReminderList(id: String) -> Void
-    
 }

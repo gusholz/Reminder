@@ -24,6 +24,9 @@
         }
       }
     },
+    "Apagar" : {
+
+    },
     "configurations" : {
       "localizations" : {
         "en" : {
@@ -52,6 +55,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Criar Nova Lista"
+          }
+        }
+      }
+    },
+    "data" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Data"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dados"
           }
         }
       }
@@ -152,6 +171,9 @@
         }
       }
     },
+    "Editar" : {
+
+    },
     "for_today" : {
       "localizations" : {
         "en" : {
@@ -169,6 +191,7 @@
       }
     },
     "hour" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -216,6 +239,22 @@
         }
       }
     },
+    "last_lists" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Finished Reminder"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lembretes Finalizados"
+          }
+        }
+      }
+    },
     "list" : {
       "localizations" : {
         "en" : {
@@ -233,6 +272,7 @@
       }
     },
     "List description" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -249,6 +289,7 @@
       }
     },
     "List name" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -296,6 +337,9 @@
         }
       }
     },
+    "Nenhuma lista criada até o momento 🤝" : {
+
+    },
     "new_list" : {
       "localizations" : {
         "en" : {
@@ -328,6 +372,22 @@
         }
       }
     },
+    "next_days" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Next Days"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Próximos dias"
+          }
+        }
+      }
+    },
     "Nunca" : {
 
     },
@@ -348,6 +408,7 @@
       }
     },
     "recents" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -506,6 +567,9 @@
           }
         }
       }
+    },
+    "Todos os lembretes foram finalizados 😎! Para criar um novo basta clickar no ícone no canto superior direito da tela" : {
+
     },
     "widget" : {
       "localizations" : {

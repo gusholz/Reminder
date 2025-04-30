@@ -18,7 +18,7 @@ struct ConfigurationScreen: View {
             GenericNavBar(title: "configurations", actionTitle: "save") {
                 
             } dismissAction: {
-                
+                coordinator.pop()
             }
             .padding(.horizontal)
             List {
@@ -64,6 +64,8 @@ struct ConfigurationScreen: View {
                 }
             }
         }
+        .navigationTitle("")
+        .navigationBarHidden(true)
     }
 }
 

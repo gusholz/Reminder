@@ -8,16 +8,19 @@
 import SwiftUI
 
 struct ReminderCard: View {
-    @Binding var isChecked: Bool
     var title: String
     var time: String
     var textTag: String
     var colorTag: Color = .verde
     var checkColor: Color = .verde
+    var action: () -> Void
+    
     
     var body: some View {
         GenericReminderCard {
-            ReminderToggle(selectionColor: checkColor, isChecked: $isChecked)
+            ReminderToggle(selectionColor: checkColor, action:  {
+                action()
+            })
         } rightContent: {
             EmptyView()
         } contentText: {
@@ -37,5 +40,7 @@ struct ReminderCard: View {
 
 #Preview {
     @Previewable @State var isChecked: Bool = false
-    ReminderCard(isChecked: $isChecked, title: "Titulo", time: "14:00", textTag: "Tag")
+    ReminderCard(title: "Titulo", time: "14:00", textTag: "Tag") {
+        
+    }
 }

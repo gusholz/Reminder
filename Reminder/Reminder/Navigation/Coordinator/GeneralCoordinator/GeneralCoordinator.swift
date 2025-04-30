@@ -12,6 +12,7 @@ enum Page: String, Identifiable {
     case listDetailView
     case createReminderSheet
     case createListSheet
+    case configurations
     
     var id: String {
         self.rawValue
@@ -28,14 +29,14 @@ enum Page: String, Identifiable {
             CreateReminderScreen()
         case .createListSheet:
             CreateListScreen()
+        case .configurations:
+            ConfigurationScreen()
         }
     }
 }
 
 enum Sheets: String, Identifiable {
     case main
-    case selectedDaysSheet
-    case selectListSheet
     
     var id: String {
         self.rawValue
@@ -45,11 +46,7 @@ enum Sheets: String, Identifiable {
     var view: some View {
         switch self {
         case .main:
-            ReminderCard(isChecked: .constant(false), title: "Teste", time: "Teste", textTag: "Teste", colorTag: .black, checkColor: .accentColor)
-        case .selectedDaysSheet:
-            DaySelection()
-        case .selectListSheet:
-            ListsScreen()
+            ReminderCard(title: "Teste", time: "Teste", textTag: "Teste", colorTag: .black, checkColor: .accentColor, action: {})
         }
     }
 }
@@ -65,7 +62,7 @@ enum FullScreenCover: String, Identifiable {
     var view: some View {
         switch self {
         case .main:
-            ReminderCard(isChecked: .constant(false), title: "Teste", time: "Teste", textTag: "Teste", colorTag: .black, checkColor: .accentColor)
+            ReminderCard(title: "Teste", time: "Teste", textTag: "Teste", colorTag: .black, checkColor: .accentColor, action: {})
         }
     }
 }

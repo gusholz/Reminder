@@ -10,6 +10,9 @@ import SwiftUI
 struct EditListScreen: View {
     @State var title: String = ""
     @State var description: String = ""
+    @State var color: Color = .laranja
+    @State var listIcon: ProjectIcons = .bulletList
+    
     
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
@@ -23,12 +26,12 @@ struct EditListScreen: View {
             Divider()
                 .overlay(.cinzaLabels)
             
-            ColorCarousel()
+            ColorCarousel(selectedColor: $color)
             
             Divider()
                 .overlay(.cinzaLabels)
             
-            IconCarousel()
+            IconCarousel(selectedIcon: $listIcon)
         }
     }
 }

@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct ReminderToggle: View {
+    @State var isChecked: Bool = false
     var selectionColor: Color = .green
-    @Binding var isChecked: Bool
+    var action: () -> Void
+
+    
     var body: some View {
         Circle()
             .stroke(.branco, lineWidth: 2)
@@ -21,6 +24,7 @@ struct ReminderToggle: View {
             .onTapGesture {
                 withAnimation {
                     isChecked = !isChecked
+                    action()
                 }
                 
             }
@@ -29,5 +33,5 @@ struct ReminderToggle: View {
 
 #Preview {
     @Previewable @State var boolean: Bool = false
-    ReminderToggle(isChecked: $boolean)
+    ReminderToggle(isChecked: boolean, action: {print("hi!")})
 }

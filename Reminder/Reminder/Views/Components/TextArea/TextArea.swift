@@ -18,7 +18,7 @@ struct TextArea: View {
                 TextField(text: $title) {
                     Text("title")
                         .setSfProDisplayFont(variation: .regular, size: 17)
-                        .foregroundStyle(.branco)
+                        .foregroundStyle(.cinzaLabels)
                 }
                 
                 Divider()
@@ -27,7 +27,7 @@ struct TextArea: View {
                 TextField(text: $description, axis: .vertical) {
                     Text("description")
                         .setSfProDisplayFont(variation: .regular, size: 17)
-                        .foregroundStyle(.branco)
+                        .foregroundStyle(.cinzaLabels)
                 }
                 .lineLimit(5, reservesSpace: true)
             }
