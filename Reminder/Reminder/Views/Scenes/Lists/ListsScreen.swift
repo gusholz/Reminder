@@ -33,11 +33,9 @@ struct ListsScreen: View {
                 }
             }
             
-                Button {
-                    coordinator.navigate(to: .createListSheet)
-                } label: {
-                    Text("create_new_list")
-                }
+            DefaultButton(label: "create_new_list") {
+                coordinator.navigate(to: .createListSheet)
+            }
             
         }
         .task {
@@ -64,8 +62,9 @@ struct ListsScreen: View {
 
 #Preview {
     @Previewable var coordinator = GeneralCoordinator()
+    @Previewable var viewModel = ReminderListViewModel()
     NavigationStack {
-        ListsScreen().environment(coordinator)
+        ListsScreen().environment(coordinator).environment(viewModel)
     }
     
 }
