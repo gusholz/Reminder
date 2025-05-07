@@ -18,15 +18,6 @@ struct RemindersOfTheDaySection: View {
         return formatter.string(from: date)
     }
     
-    func getColorFromList(reminder: Reminder) -> Color {
-        guard let id = reminder.listReference?.uuidString else {
-            return .cinzaLabels
-        }
-        let reminderList = reminderListViewModel.getReminderListById(id)
- 
-        return (reminderList?.color.extractColorFromNamedColor() ?? reminderList?.color.extractRGBColor()) ?? Color(.cinzaLabels)
-    }
-    
     var body: some View {
         VStack(alignment: .leading) {
             Text("for_today")
@@ -42,30 +33,15 @@ struct RemindersOfTheDaySection: View {
                         title: reminder.title,
                         time: formatHourAndDay(reminder.alertTime),
                         textTag: reminder.description,
-                        colorTag: getColorFromList(reminder: reminder),
+                        colorTag: reminderListViewModel.getColorFromList(reminder: reminder),
                         action: {
                             reminderListViewModel.finishReminder(reminder.id)
                     })
                     .contextMenu {
-                        Button {
-                            // TODO: coordinator.goToEditReminderScreen(reminder.id)
-                            print(reminder.alertTime)
-                        } label: {
-                            HStack {
-                                Text("edit")
-                                IconsManager.setIcon(icon: .gear)
-                            }
-                        }
-                        
-                        Button {
+                        ReminderListContextMenu {
                             reminderListViewModel.deleteReminder(reminder)
                             reminderListViewModel.reminders = reminderListViewModel.getAllReminders()
                             reminderListViewModel.remindersLists = reminderListViewModel.getAllRemindersLists()
-                        } label: {
-                            HStack {
-                                Text("delete")
-                                IconsManager.setIcon(icon: .trash)
-                            }
                         }
                     }
                         .padding(.bottom, 24)

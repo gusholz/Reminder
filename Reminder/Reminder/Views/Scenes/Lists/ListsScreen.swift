@@ -27,7 +27,27 @@ struct ListsScreen: View {
                                 color: (list.color.extractColorFromNamedColor() ?? list.color.extractRGBColor()) ?? Color(.branco),
                                 icon: IconsManager.getIcon(iconString: list.icon),
                                 title: list.title)
-                                .padding(.bottom, 8)
+                            .contextMenu {
+                                Button {
+                                    reminderListViewModel.selectedReminderList = list
+                                    coordinator.navigate(to: .editListView)
+                                } label: {
+                                    HStack {
+                                        Text("edit")
+                                        IconsManager.setIcon(icon: .gear)
+                                    }
+                                }
+                                
+                                Button {
+                                    reminderListViewModel.deleteReminderList(list.id.uuidString)
+                                } label: {
+                                    HStack {
+                                        Text("delete")
+                                        IconsManager.setIcon(icon: .trash)
+                                    }
+                                }
+                            }
+                            .padding(.bottom, 8)
                         }
                     }
                 }

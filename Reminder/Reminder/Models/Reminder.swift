@@ -15,7 +15,7 @@ class ReminderDataBaseModel {
     var reminderDescription: String
     var alertTime: Date
     var isFinished: Bool
-    @Relationship(deleteRule: .cascade) var listReference: ReminderListDataBaseModel?
+    var listReference: ReminderListDataBaseModel?
     
     init(id: UUID, title: String, description: String, alertTime: Date, isFinished: Bool = false, listReference: UUID? = nil) {
         self.id = id

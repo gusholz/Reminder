@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-enum ProjectIcons: String {
+enum ProjectIcons: String, CaseIterable {
     case twoPersons = "person.2"
     case bag = "bag"
     case plusCircle = "plus.circle"
@@ -153,5 +153,9 @@ struct IconsManager {
     
     static func getIcon(iconString: String) -> Image {
         return Image(systemName: iconString)
+    }
+    
+    static func iconFromString(_ iconString: String) -> ProjectIcons? {
+        return ProjectIcons.allCases.first(where: { $0.rawValue == iconString })
     }
 }

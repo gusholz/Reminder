@@ -190,6 +190,9 @@
     "edit" : {
 
     },
+    "edit_list" : {
+
+    },
     "for_today" : {
       "localizations" : {
         "en" : {
@@ -301,6 +304,9 @@
           }
         }
       }
+    },
+    "Nenhuma lista" : {
+
     },
     "Nenhuma lista criada até o momento 🤝" : {
 

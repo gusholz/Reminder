@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 @MainActor
 @Observable
@@ -37,6 +38,22 @@ class ReminderListViewModel {
         return db.reminderAdapter.getReminder(id: id)
     }
     
+    func getColorFromSelectedList() -> Color {
+        guard let selectedList = selectedReminderList else {
+            return .cinzaLabels
+        }
+        return selectedList.color.extractColorFromNamedColor() ?? selectedList.color.extractRGBColor() ?? Color(.cinzaLabels)
+    }
+    
+    func getColorFromList(reminder: Reminder) -> Color {
+        guard let id = reminder.listReference?.uuidString else {
+            return .cinzaLabels
+        }
+        let reminderList = self.getReminderListById(id)
+ 
+        return (reminderList?.color.extractColorFromNamedColor() ?? reminderList?.color.extractRGBColor()) ?? Color(.cinzaLabels)
+    }
+    
     func finishReminder(_ reminderId: UUID) {
         guard let index = reminders.firstIndex(where: { selectedReminder in
             selectedReminder.id == reminderId
@@ -64,6 +81,15 @@ class ReminderListViewModel {
     
     func createReminderList(list: ReminderList) {
         db.reminderListAdapter.createReminderList(reminder: list)
+    }
+    
+    func deleteReminderList(_ id: String) {
+        db.reminderListAdapter.deleteReminderList(id: id);
+        self.remindersLists = getAllRemindersLists()
+    }
+    
+    func editReminderList(_ id: String, updatedList: ReminderList) {
+        db.reminderListAdapter.updateReminderList(id: id, updatedList: updatedList)
     }
     
     func getAllRemindersFromList(reminderIds: [String]) -> [Reminder] {

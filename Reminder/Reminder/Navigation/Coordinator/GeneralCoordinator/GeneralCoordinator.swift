@@ -13,6 +13,7 @@ enum Page: String, Identifiable {
     case createReminderSheet
     case createListSheet
     case configurations
+    case editListView
     
     var id: String {
         self.rawValue
@@ -29,6 +30,8 @@ enum Page: String, Identifiable {
             CreateReminderScreen()
         case .createListSheet:
             CreateListScreen()
+        case .editListView:
+            EditListScreen()
         case .configurations:
             ConfigurationScreen()
         }

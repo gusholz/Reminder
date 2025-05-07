@@ -27,6 +27,16 @@ struct SelectListScreen: View {
                                 .padding(.bottom, 8)
                         }
                     }
+                    Button {
+                        reminderListViewModel.selectedReminderList = nil
+                    } label: {
+                        Text("Nenhuma lista")
+                            .foregroundStyle(.branco)
+                            .padding()
+                            .background(.cinzaBackground)
+                            .cornerRadius(8)
+                    }
+
                 }
             }
         }

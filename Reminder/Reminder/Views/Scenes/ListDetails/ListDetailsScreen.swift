@@ -62,14 +62,9 @@ struct ListDetailsScreen: View {
                         }
                 }
             }
-            
-            ToolbarItem {
-                
-            }
         }
         .navigationBarBackButtonHidden()
-        // TODO: Update to use the ReminderListThemeColor
-        .toolbarBackground(.laranja, for: .navigationBar)
+        .toolbarBackground(reminderListViewModel.getColorFromSelectedList(), for: .navigationBar)
         .toolbarBackground(.visible, for: .navigationBar)
     }
 }

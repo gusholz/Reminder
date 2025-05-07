@@ -33,9 +33,17 @@ struct ReminderOfNextDaysSection: View {
                         title: reminder.title,
                         time: formatHourAndDay(reminder.alertTime),
                         textTag: reminder.description,
+                        colorTag: reminderListViewModel.getColorFromList(reminder: reminder),
                         action: {
                             reminderListViewModel.finishReminder(reminder.id)
                     })
+                    .contextMenu {
+                        ReminderListContextMenu {
+                            reminderListViewModel.deleteReminder(reminder)
+                            reminderListViewModel.reminders = reminderListViewModel.getAllReminders()
+                            reminderListViewModel.remindersLists = reminderListViewModel.getAllRemindersLists()
+                        }
+                    }
                     .padding(.bottom, 24)
                 }
             }
