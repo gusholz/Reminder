@@ -206,23 +206,6 @@
         }
       }
     },
-    "hour" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hour "
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hora"
-          }
-        }
-      }
-    },
     "hour_format" : {
       "localizations" : {
         "en" : {
@@ -287,40 +270,6 @@
         }
       }
     },
-    "List description" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Description"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Descrição"
-          }
-        }
-      }
-    },
-    "List name" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Name"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Nome"
-          }
-        }
-      }
-    },
     "mm_dd_yy" : {
       "localizations" : {
         "en" : {
@@ -352,6 +301,9 @@
           }
         }
       }
+    },
+    "Nenhuma lista criada até o momento 🤝" : {
+
     },
     "new_list" : {
       "localizations" : {
@@ -417,6 +369,22 @@
         }
       }
     },
+    "no_reminders_for_the_next_days" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No reminders for the next days 😎🤝 To create a new one, simply click on the top right corner of the screen"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sem lembretes para os próximos dias 😎🤝 Para criar um novo, bastar clicar no canto superior direito"
+          }
+        }
+      }
+    },
     "Nunca" : {
 
     },
@@ -432,23 +400,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Personalizar"
-          }
-        }
-      }
-    },
-    "recents" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Recents"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Recentes"
           }
         }
       }

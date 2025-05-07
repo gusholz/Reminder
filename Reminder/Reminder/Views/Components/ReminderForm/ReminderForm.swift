@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct ReminderForm: View {
-    @State var viewModel: ReminderFormViewModel = ReminderFormViewModel()
     @Environment(GeneralCoordinator.self) var coordinator
+    @Environment(ReminderListViewModel.self) var reminderListViewModel
     
     @Binding var reminderTitle: String
     @Binding var reminderDescription: String
@@ -35,20 +35,20 @@ struct ReminderForm: View {
             Button {
                 isSelectListSheetOpen.toggle()
             } label: {
-                ListSelectionRow(selectedList: $viewModel.selectedList)
+                ListSelectionRow(selectedList: reminderListViewModel.selectedReminderList)
             }
 
             Text("details")
                 .setSfProDisplayFont(variation: .regular, size: 12)
-                .padding(EdgeInsets(top: 8, leading: 16, bottom: 0, trailing: 0))
+                .padding(EdgeInsets(top: 8, leading: 16, bottom: 0, trailing: 0 ))
                 .foregroundStyle(.cinzaLabels)
             
             DetailsSection(selectedDate: $selectedDate, selectedDays: $selectedDays)
             
             Spacer()
         }
-        .sheet(isPresented: $isSelectListSheetOpen){
-            SelectListScreen(action: {})
+        .sheet(isPresented: $isSelectListSheetOpen) {
+            SelectListScreen(isSheetOpen: $isSelectListSheetOpen)
         }
         .padding()
     }

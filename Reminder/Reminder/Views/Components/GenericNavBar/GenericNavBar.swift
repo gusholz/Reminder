@@ -11,6 +11,7 @@ struct GenericNavBar: View {
     @Environment(GeneralCoordinator.self) var coordinator
     var title: LocalizedStringKey
     var actionTitle: LocalizedStringKey
+    var isSaveActionDisabled: Bool = false
     var saveAction: () -> Void
     var dismissAction: () -> Void
     var hasSaveAction: Bool = true
@@ -33,7 +34,7 @@ struct GenericNavBar: View {
             if hasSaveAction {
                 Text(actionTitle)
                     .setSfProDisplayFont(variation: .regular, size: 20)
-                    .foregroundStyle(.verde)
+                    .foregroundStyle(isSaveActionDisabled ? .cinzaLabels :.verde)
                     .frame(width: 54)
                     .onTapGesture {
                         saveAction()

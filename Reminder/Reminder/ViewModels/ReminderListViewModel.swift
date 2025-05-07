@@ -18,6 +18,7 @@ class ReminderListViewModel {
     
     func createReminder(_ reminder: Reminder) {
         db.reminderAdapter.createReminder(reminder: reminder)
+        selectedReminderList = nil
     }
     
     func deleteReminder(_ reminder: Reminder) {
@@ -51,6 +52,10 @@ class ReminderListViewModel {
     
     func isReminderForToday(_ date: Date) -> Bool {
         return Calendar.current.isDateInToday(date)
+    }
+    
+    func getReminderListById(_ id: String) -> ReminderList? {
+        return db.reminderListAdapter.getReminderList(id: id)
     }
     
     func getAllRemindersLists() -> [ReminderList] {

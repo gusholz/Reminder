@@ -9,24 +9,25 @@ import SwiftUI
 
 struct SelectListScreen: View {
     @Environment(GeneralCoordinator.self) var coordinator
-    // @Binding var remindersList: [ReminderList]
-    var action: () -> Void
+    @Environment(ReminderListViewModel.self) var reminderListViewModel
+    @Binding var isSheetOpen: Bool
     
     var body: some View {
         VStack(alignment: .center) {
             ScrollView(.vertical) {
-//                if remindersList.isEmpty {
-//                    Text("Nenhuma lista criada até o momento 🤝")
-//                } else {
-//                    ForEach(remindersList, id: \.self) { list in
-//                        Button {
-//                            action()
-//                        } label: {
-//                            ListCard(color: list.color.extractColorFromNamedColor() ?? Color(.branco), icon: IconsManager.getIcon(iconString: list.icon), title: list.title)
-//                                .padding(.bottom, 8)
-//                        }
-//                    }
-//                }
+                if reminderListViewModel.remindersLists.isEmpty {
+                    Text("Nenhuma lista criada até o momento 🤝")
+                } else {
+                    ForEach(reminderListViewModel.remindersLists, id: \.self) { list in
+                        Button {
+                            reminderListViewModel.selectedReminderList = list
+                            isSheetOpen.toggle()
+                        } label: {
+                            ListCard(color: list.color.extractColorFromNamedColor() ?? list.color.extractRGBColor() ?? Color(.branco), icon: IconsManager.getIcon(iconString: list.icon), title: list.title)
+                                .padding(.bottom, 8)
+                        }
+                    }
+                }
             }
         }
         .padding()

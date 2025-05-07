@@ -19,34 +19,31 @@ struct CreateReminderScreen: View {
 
     var body: some View {
         VStack {
-            GenericNavBar(title: "new_reminder", actionTitle: "save") {
+            GenericNavBar(title: "new_reminder", actionTitle: "save", isSaveActionDisabled: reminderTitle.isEmpty) {
                 if reminderTitle.isEmpty{
                     return
                 }
                 var newReminder: Reminder
-                if selectedList.isEmpty {
+                if reminderListViewModel.selectedReminderList == nil {
                     newReminder = Reminder(id: .init(), title: reminderTitle, description: reminderDescription, alertTime: selectedDate, isFinished: false)
                 } else {
-                    newReminder = Reminder(id: .init(), title: reminderTitle, description: reminderDescription, alertTime: selectedDate, listReference: UUID(uuidString: selectedList), isFinished: false)
+                    newReminder = Reminder(id: .init(), title: reminderTitle, description: reminderDescription, alertTime: selectedDate, listReference: reminderListViewModel.selectedReminderList?.id, isFinished: false)
                 }
                 
                 reminderListViewModel.createReminder(newReminder)
+                reminderListViewModel.editReminder(newReminder)
                 coordinator.pop()
             } dismissAction: {
                 coordinator.pop()
-            }
+            } 
                 .padding()
             ScrollView(.vertical){
                 ReminderForm(reminderTitle: $reminderTitle, reminderDescription: $reminderDescription, selectedList: $selectedList, selectedDate: $selectedDate, selectedDays: $selectedDays)
             }
         }
-        .onChange(of: selectedDate) {
-            print(selectedDate)
-        }
         .navigationTitle("")
         .navigationBarHidden(true)
     }
-        
 }
 
 #Preview {

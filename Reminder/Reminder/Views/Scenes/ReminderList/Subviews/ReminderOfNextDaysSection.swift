@@ -25,7 +25,7 @@ struct ReminderOfNextDaysSection: View {
                 .setBdoGroteskFont(weight: .demibold, size: 18)
                 .padding(EdgeInsets(top: 16, leading: 0, bottom: 16, trailing: 0))
             if reminderListViewModel.reminders.filter({!reminderListViewModel.isReminderForToday($0.alertTime) && !$0.isFinished}).isEmpty {
-                Text("all_reminders_empty")
+                Text("no_reminders_for_the_next_days")
                     .setBdoGroteskFont(weight: .medium, size: 16)
             } else {
                 ForEach(reminderListViewModel.reminders.filter { !reminderListViewModel.isReminderForToday($0.alertTime) && !$0.isFinished}, id: \.id) { reminder in

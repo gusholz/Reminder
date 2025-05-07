@@ -18,6 +18,15 @@ struct RemindersOfTheDaySection: View {
         return formatter.string(from: date)
     }
     
+    func getColorFromList(reminder: Reminder) -> Color {
+        guard let id = reminder.listReference?.uuidString else {
+            return .cinzaLabels
+        }
+        let reminderList = reminderListViewModel.getReminderListById(id)
+ 
+        return (reminderList?.color.extractColorFromNamedColor() ?? reminderList?.color.extractRGBColor()) ?? Color(.cinzaLabels)
+    }
+    
     var body: some View {
         VStack(alignment: .leading) {
             Text("for_today")
@@ -29,12 +38,11 @@ struct RemindersOfTheDaySection: View {
                     .setBdoGroteskFont(weight: .medium, size: 16)
             } else {
                 ForEach(reminderListViewModel.reminders.filter { reminderListViewModel.isReminderForToday($0.alertTime) && !$0.isFinished }, id: \.id) { reminder in
-                    // TODO: Criar função auxiliar que modifica a colorTag com base na cor da reminderList pai do reminder em questão
                     ReminderCard(
                         title: reminder.title,
                         time: formatHourAndDay(reminder.alertTime),
                         textTag: reminder.description,
-                        colorTag: .amarelo,
+                        colorTag: getColorFromList(reminder: reminder),
                         action: {
                             reminderListViewModel.finishReminder(reminder.id)
                     })

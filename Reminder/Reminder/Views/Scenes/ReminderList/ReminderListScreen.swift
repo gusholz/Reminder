@@ -23,7 +23,7 @@ struct ReminderListScreen: View {
             Divider()
                 .overlay(.cinzaLabels)
             
-            RemindersOfTheDaySection()
+            ReminderOfNextDaysSection()
         }
         .task {
             reminderListViewModel.reminders = reminderListViewModel.getAllReminders()

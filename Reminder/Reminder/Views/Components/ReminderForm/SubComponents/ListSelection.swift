@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ListSelectionRow: View {
-    @Binding var selectedList: ReminderList?
+    var selectedList: ReminderList?
     
     var body: some View {
         HStack {
@@ -18,9 +18,15 @@ struct ListSelectionRow: View {
             
             Spacer()
             
-            Text("list")
-                .setBdoGroteskFont(weight: .regular, size: 14)
-                .foregroundStyle(.cinzaLabels)
+            if selectedList != nil {
+                Text(selectedList?.title ?? "selected_list")
+                    .setBdoGroteskFont(weight: .regular, size: 14)
+                    .foregroundStyle(.cinzaLabels)
+            } else {
+                Text("list")
+                    .setBdoGroteskFont(weight: .regular, size: 14)
+                    .foregroundStyle(.cinzaLabels)
+            }
             
             IconsManager.setIcon(icon: .arrowRight)
                 .foregroundStyle(.cinzaLabels)
@@ -32,7 +38,7 @@ struct ListSelectionRow: View {
 }
 
 #Preview {
-    @Previewable @State var selectedList: ReminderList? = ReminderList(id: .init(), title: "Lista de compras", description: "", remindersId: [], color: "amarelo", icon: "bag")
-    ListSelectionRow(selectedList: $selectedList)
+    @Previewable var selectedList: ReminderList? = ReminderList(id: .init(), title: "Lista de compras", description: "", remindersId: [], color: "amarelo", icon: "bag")
+    ListSelectionRow(selectedList: selectedList)
 }
  
