@@ -10,12 +10,9 @@ import SwiftUI
 struct ListDetailsScreen: View {
     @Environment(GeneralCoordinator.self) var coordinator
     @Environment(ReminderListViewModel.self) var reminderListViewModel
-
-    // @Binding var reminderList: ReminderList
     
     var body: some View {
         VStack(alignment: .leading) {
-            // TODO: Substituir por reminderList.name e reminderList.description
             Text(reminderListViewModel.selectedReminderList?.title ?? "Unknown List")
                 .setBdoGroteskFont(weight: .medium, size: 30)
                 .padding(.bottom, 12)
@@ -28,10 +25,19 @@ struct ListDetailsScreen: View {
             
             ScrollView {
                 ForEach(reminderListViewModel.reminders, id: \.id) { reminder in
-                    ReminderCard(title: reminder.title, time: "12:45", textTag: reminder.description, action: {
-                        
-                    })
-                        .padding(.bottom, 24)
+                    if let selectedList = reminderListViewModel.selectedReminderList {
+                        if reminder.listReference == selectedList.id && reminder.isFinished == false {
+                            ReminderCard(
+                                title: reminder.title,
+                                time: reminder.alertTime.formattedHourAndDay,
+                                textTag: reminder.description,
+                                colorTag: reminderListViewModel.getColorFromList(reminder: reminder),
+                                action: {
+                                    reminderListViewModel.finishReminder(reminder.id)
+                                })
+                            .padding(.bottom, 24)
+                        }
+                    }
                 }
             }
             
@@ -52,13 +58,32 @@ struct ListDetailsScreen: View {
                 HStack {
                     IconsManager.setIcon(icon: .circleWithThreeDots)
                         .frame(width: 54, alignment: .leading)
-                        .onTapGesture {
-                            print("Ohiyo!!")
+                        .contextMenu {
+                            Button {
+                                coordinator.navigate(to: .editListView)
+                            } label: {
+                                HStack {
+                                    Text("edit")
+                                    IconsManager.setIcon(icon: .gear)
+                                }
+                            }
+                            
+                            Button {
+                                if let selectedReminder = reminderListViewModel.selectedReminderList {
+                                    reminderListViewModel.deleteReminderList(selectedReminder.id.uuidString)
+                                    coordinator.pop()
+                                }
+                            } label: {
+                                HStack {
+                                    Text("delete")
+                                    IconsManager.setIcon(icon: .trash)
+                                }
+                            }
                         }
                     IconsManager.setIcon(icon: .plusCircleFilled)
                         .frame(width: 54, alignment: .leading)
                         .onTapGesture {
-                            print("Ohiyo!!")
+                            coordinator.navigate(to: .createReminderSheet)
                         }
                 }
             }

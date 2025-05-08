@@ -32,7 +32,7 @@ struct CreateReminderScreen: View {
                 
                 reminderListViewModel.createReminder(newReminder)
                 reminderListViewModel.editReminder(newReminder)
-                coordinator.pop()
+                coordinator.popToRoot()
             } dismissAction: {
                 coordinator.pop()
             } 

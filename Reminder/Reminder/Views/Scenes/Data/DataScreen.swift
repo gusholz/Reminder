@@ -23,6 +23,8 @@ struct DataScreen: View {
                         title: reminder.title,
                         time: reminder.alertTime.formatted(date: .omitted, time: .standard),
                         textTag: reminder.description,
+                        colorTag: reminderListViewModel.getColorFromList(reminder: reminder),
+                        hasToggle: false,
                         action: {
                         
                     })

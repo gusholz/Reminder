@@ -11,13 +11,6 @@ struct RemindersOfTheDaySection: View {
     @Environment(GeneralCoordinator.self) var coordinator
     @Environment(ReminderListViewModel.self) var reminderListViewModel
     
-    func formatHourAndDay(_ date: Date) -> String {
-        let formatter = DateFormatter()
-        formatter.timeZone = TimeZone(abbreviation: "UTC")
-        formatter.dateFormat = "E, HH:mm"
-        return formatter.string(from: date)
-    }
-    
     var body: some View {
         VStack(alignment: .leading) {
             Text("for_today")
@@ -31,7 +24,7 @@ struct RemindersOfTheDaySection: View {
                 ForEach(reminderListViewModel.reminders.filter { reminderListViewModel.isReminderForToday($0.alertTime) && !$0.isFinished }, id: \.id) { reminder in
                     ReminderCard(
                         title: reminder.title,
-                        time: formatHourAndDay(reminder.alertTime),
+                        time: reminder.alertTime.formattedHourAndDay,
                         textTag: reminder.description,
                         colorTag: reminderListViewModel.getColorFromList(reminder: reminder),
                         action: {

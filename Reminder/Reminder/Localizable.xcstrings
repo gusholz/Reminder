@@ -153,7 +153,20 @@
       }
     },
     "delete" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Deletar"
+          }
+        }
+      }
     },
     "description" : {
       "localizations" : {
@@ -188,10 +201,36 @@
       }
     },
     "edit" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Edit"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Editar"
+          }
+        }
+      }
     },
     "edit_list" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Edit List"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Editar Lista"
+          }
+        }
+      }
     },
     "for_today" : {
       "localizations" : {
@@ -305,12 +344,6 @@
         }
       }
     },
-    "Nenhuma lista" : {
-
-    },
-    "Nenhuma lista criada até o momento 🤝" : {
-
-    },
     "new_list" : {
       "localizations" : {
         "en" : {
@@ -364,12 +397,28 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "No lists created yet 🤝"
+            "value" : "No list"
           }
         },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "Nenhuma Lista"
+          }
+        }
+      }
+    },
+    "no_lists_created_yet" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No Lists Created Yet"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "Nenhuma lista criada até o momento 🤝"
           }
         }

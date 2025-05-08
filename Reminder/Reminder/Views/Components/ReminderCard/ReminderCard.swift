@@ -13,14 +13,19 @@ struct ReminderCard: View {
     var textTag: String
     var colorTag: Color = .verde
     var checkColor: Color = .verde
+    var hasToggle: Bool = true
     var action: () -> Void
     
     
     var body: some View {
         GenericReminderCard {
-            ReminderToggle(selectionColor: checkColor, action:  {
-                action()
-            })
+            if hasToggle {
+                AnyView(ReminderToggle(selectionColor: checkColor, action:  {
+                    action()
+                }))
+            } else {
+                AnyView(EmptyView())
+            }
         } rightContent: {
             EmptyView()
         } contentText: {

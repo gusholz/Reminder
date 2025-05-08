@@ -60,6 +60,7 @@ struct ListsScreen: View {
         }
         .task {
             reminderListViewModel.remindersLists = reminderListViewModel.getAllRemindersLists()
+            reminderListViewModel.reminders = reminderListViewModel.getAllReminders()
         }
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {

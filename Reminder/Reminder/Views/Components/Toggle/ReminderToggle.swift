@@ -12,7 +12,6 @@ struct ReminderToggle: View {
     var selectionColor: Color = .green
     var action: () -> Void
 
-    
     var body: some View {
         Circle()
             .stroke(.branco, lineWidth: 2)

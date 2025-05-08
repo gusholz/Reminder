@@ -16,7 +16,7 @@ struct SelectListScreen: View {
         VStack(alignment: .center) {
             ScrollView(.vertical) {
                 if reminderListViewModel.remindersLists.isEmpty {
-                    Text("Nenhuma lista criada até o momento 🤝")
+                    Text("no_lists_created_yet")
                 } else {
                     ForEach(reminderListViewModel.remindersLists, id: \.self) { list in
                         Button {
@@ -29,8 +29,9 @@ struct SelectListScreen: View {
                     }
                     Button {
                         reminderListViewModel.selectedReminderList = nil
+                        isSheetOpen = false;
                     } label: {
-                        Text("Nenhuma lista")
+                        Text("no_lists")
                             .foregroundStyle(.branco)
                             .padding()
                             .background(.cinzaBackground)

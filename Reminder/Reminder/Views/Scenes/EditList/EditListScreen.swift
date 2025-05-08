@@ -22,14 +22,22 @@ struct EditListScreen: View {
                     return
                 }
                 
-                let updatedList = ReminderList(id: UUID.init(), title: title, description: description, remindersId: [], color: color.toString(), icon: listIcon.rawValue)
-                
-                if let selectedList = reminderListViewModel.selectedReminderList {
-                    reminderListViewModel.editReminderList(
-                        selectedList.id.uuidString,
-                        updatedList: updatedList
-                    )
-                }
+                guard let selectedList = reminderListViewModel.selectedReminderList else { return }
+
+                let updatedList = ReminderList(
+                    id: selectedList.id,
+                    title: title,
+                    description: description,
+                    remindersId: selectedList.remindersId,
+                    color: color.toString(),
+                    icon: listIcon.rawValue
+                )
+
+                reminderListViewModel.editReminderList(
+                    selectedList.id.uuidString,
+                    updatedList: updatedList
+                )
+
                 coordinator.pop()
             } dismissAction: {
                 coordinator.pop()
@@ -59,14 +67,6 @@ struct EditListScreen: View {
                 title = selectedList.title
                 description = selectedList.description
                 listIcon = IconsManager.iconFromString(selectedList.icon) ?? .ant
-                
-                if let namedColor = selectedList.color.extractColorFromNamedColor() {
-                    color = namedColor
-                } else if let rgbColor = selectedList.color.extractRGBColor() {
-                    color = rgbColor
-                } else {
-                    color = .blue
-                }
             }
         }
         .navigationTitle("")
